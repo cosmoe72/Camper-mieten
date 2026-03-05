@@ -19,9 +19,9 @@ body {
 
 /* HEADER */
 header {
-  background:#C8AD7E;
+  background: linear-gradient(135deg, #C8AD7E 0%, #D6BA85 100%);
   color:white;
-  padding: 4rem 2rem 2rem;
+  padding: 5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@ header {
 header h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0.2rem 0;
 }
 
 header p {
@@ -60,21 +60,20 @@ header p {
 /* ZITATBOX */
 .quote {
   position: relative;
-  max-width: 800px;
-  margin: -50px auto 4rem auto; /* überlappt Header */
+  max-width: 700px;
+  margin: -30px auto 4rem auto;
+  padding: 2rem 1.5rem;
+  font-size: 1.75rem;
+  line-height: 1.4;
+  font-family: 'Georgia', serif;
+  text-align: center;
   background: #fffdfa;
   border-radius: 15px;
-  padding: 2rem 1.5rem;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  font-family: 'Georgia', serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #333;
-  text-align: center;
   opacity: 0;
   transform: translateY(-30px);
   transition: all 1s ease-out;
+  word-break: break-word;
 }
 
 .quote.visible {
@@ -106,7 +105,7 @@ header p {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2.5rem;
-  padding: 3rem 2rem 2rem;
+  padding: 2.5rem 2rem 2rem;
 }
 
 .camper {
@@ -134,12 +133,12 @@ header p {
 /* BUTTON auf Bild */
 .camper .button {
   position: absolute;
-  bottom: 25px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   background: white;
   color: #C8AD7E;
-  padding: 1.1rem 1.6rem;
+  padding: 1.2rem 1.8rem;
   border-radius: 30px;
   font-weight: 500;
   font-size: 1rem;
@@ -219,7 +218,7 @@ html { scroll-behavior: smooth; }
 <!-- ZITATBOX -->
 <div class="quote">
   <span class="quote-mark">»</span>
-  Die einzige Reise, die man bereut, ist die, die man nicht macht.
+  Die einzige Reise, die man <wbr>bereut, ist die, die man nicht macht.
   <span class="quote-mark">«</span>
 </div>
 
@@ -283,5 +282,6 @@ const observerQuote = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 observerQuote.observe(quote);
 </script>
+
 </body>
 </html>
