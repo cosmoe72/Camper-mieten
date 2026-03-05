@@ -6,10 +6,11 @@
 
 <title>Camper mieten</title>
 
-<!-- Google Font Poppins -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -19,8 +20,8 @@ body {
 
 /* HEADER */
 header {
-  background: #C8AD7E;
-  color: white;
+  background:#C8AD7E;
+  color:white;
   padding: 4rem 2rem 2rem;
   display: flex;
   flex-direction: column;
@@ -28,8 +29,8 @@ header {
 }
 
 .logo-circle {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background: white;
   display: flex;
@@ -40,8 +41,8 @@ header {
 }
 
 .logo-circle img {
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 
@@ -57,30 +58,43 @@ header p {
   margin: 0;
 }
 
-/* Zitat */
+/* ZITAT */
 .quote {
-  max-width: 700px;
-  margin: 2rem auto;
-  font-size: 1.25rem;
-  font-weight: 300;
-  font-style: italic;
+  max-width: 900px;
+  margin: 3rem auto 4rem auto;
+  background: #fffdfa;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.4;
   color: #333;
-  padding: 0 1rem;
+  position: relative;
 }
 
-/* Camper Container */
+.quote .quote-mark {
+  font-size: 4rem;
+  vertical-align: top;
+  color: #C8AD7E;
+  font-weight: 700;
+  margin: 0 0.2rem;
+}
+
+/* CAMPER CONTAINER */
 .camper-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2.5rem; /* etwas mehr Abstand */
-  padding: 2rem;
+  gap: 2.5rem;
+  padding: 3rem 2rem 2rem;
 }
 
 .camper {
   position: relative;
-  max-width: 550px; /* größer als vorher */
-  flex: 1 1 350px;  /* mehr Breite auf Desktop */
+  max-width: 550px;
+  flex: 1 1 350px;
   border-radius: 10px;
   overflow: hidden;
   opacity: 0;
@@ -99,46 +113,84 @@ header p {
   border-radius: 10px;
 }
 
-/* Button auf Bild */
+/* BUTTON auf Bild */
 .camper .button {
   position: absolute;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-  background: white; /* weißer Button */
-  color: #C8AD7E;   /* Text in vorheriger Buttonfarbe */
-  padding: 1.1rem 1.6rem; /* größer */
+  background: white;
+  color: #C8AD7E;
+  padding: 1.1rem 1.6rem;
   border-radius: 30px;
   font-weight: 500;
-  font-size: 1rem;   /* etwas größer */
+  font-size: 1rem;
   transition: 0.3s;
 }
 
 .camper .button:hover {
-  background: #C8AD7E; /* invertiert */
-  color: white;         /* Text weiß */
+  background: #C8AD7E;
+  color: white;
 }
 
-a {
-  text-decoration: none;
+a { text-decoration: none; }
+
+/* VERMIEETER SEKTOR */
+.owner-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 4rem auto 4rem auto;
+  padding: 0 1rem;
 }
 
-/* Footer */
+.owner-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.owner-circle img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.owner-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.owner-section p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* FOOTER */
 footer {
   margin: 3rem 0;
   font-size: 0.8rem;
   color: #C8AD7E;
 }
 
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo-circle">
     <img src="logo.png" alt="Logo">
@@ -147,10 +199,14 @@ html {
   <p>Mercedes Marco Polo mieten & Abenteuer starten</p>
 </header>
 
+<!-- ZITAT -->
 <div class="quote">
-  „Die schönsten Erinnerungen sammelt man auf Reisen – nicht auf dem Sofa.“
+  <span class="quote-mark">»</span>
+  Die schönsten Erinnerungen sammelt man auf Reisen – nicht auf dem Sofa.
+  <span class="quote-mark">«</span>
 </div>
 
+<!-- CAMPER -->
 <div class="camper-container">
   <!-- Yescapa links -->
   <div class="camper" data-delay="0">
@@ -169,11 +225,21 @@ html {
   </div>
 </div>
 
+<!-- VERMIEETER -->
+<div class="owner-section">
+  <div class="owner-circle">
+    <img src="vermieter.jpg" alt="Vermieter">
+  </div>
+  <h2>Über den Vermieter</h2>
+  <p>Hi, ich bin René und liebe es, Menschen die Freiheit auf Reisen zu ermöglichen. Mit meinem Mercedes Marco Polo Camper kannst du spontan die schönsten Orte entdecken und unvergessliche Erinnerungen sammeln.</p>
+</div>
+
+<!-- FOOTER -->
 <footer>
   © 2026 Camper
 </footer>
 
-<!-- Scroll Animation Script -->
+<!-- ANIMATION SCRIPT -->
 <script>
 const campers = document.querySelectorAll('.camper');
 const observer = new IntersectionObserver((entries) => {
