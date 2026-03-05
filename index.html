@@ -21,11 +21,26 @@
       font-size:2rem; 
     }
 
-    .camper {
-      margin:2rem 0;
-      display: inline-block;
-      max-width: 90%;
+    .camper-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
     }
+    .camper {
+      max-width: 500px;
+      flex: 1 1 300px;
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+    .camper.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .camper a {
       text-decoration: none;
       color: white;
@@ -33,7 +48,6 @@
     }
     .camper img {
       width: 100%;
-      max-width: 500px;
       border-radius:8px;
       height: auto;
       display:block;
@@ -68,24 +82,40 @@
     <p>Jetzt Mercedes Marco Polo mieten & Abenteuer starten!</p>
   </header>
 
-  <!-- Paul-Camper Bild und Link -->
-  <div class="camper">
-    <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
-      <img src="Camper2.jpg" alt="Camper Bild 2">
-      <div class="button">Marco-Polo Camper auf Paul-Camper mieten</div>
-    </a>
-  </div>
+  <div class="camper-container">
+    <!-- Paul-Camper: Camper1.jpg -->
+    <div class="camper">
+      <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
+        <img src="Camper1.jpg" alt="Camper Paul-Camper">
+        <div class="button">Marco-Polo Camper auf Paul-Camper mieten</div>
+      </a>
+    </div>
 
-  <!-- Yescapa Bild und Link -->
-  <div class="camper">
-    <a href="https://yescapa.de/campers/109345" target="_blank">
-      <img src="Camper1.jpg" alt="Camper Bild 1">
-      <div class="button">Marco-Polo Camper auf Yescapa mieten</div>
-    </a>
+    <!-- Yescapa: Camper2.jpg -->
+    <div class="camper">
+      <a href="https://yescapa.de/campers/109345" target="_blank">
+        <img src="Camper2.jpg" alt="Camper Yescapa">
+        <div class="button">Marco-Polo Camper auf Yescapa mieten</div>
+      </a>
+    </div>
   </div>
 
   <footer>
     &copy; 2026 Camper-Mieten
   </footer>
+
+  <script>
+    // IntersectionObserver für Einblenden der Camper
+    const campers = document.querySelectorAll('.camper');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    campers.forEach(c => observer.observe(c));
+  </script>
 </body>
 </html>
