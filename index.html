@@ -11,16 +11,42 @@
       background:#f8f8f8; 
       text-align:center;
     }
+
+    /* HEADER */
     header { 
       background:#C8AD7E; 
       color:white; 
-      padding:2rem;
+      padding:4rem 2rem 2rem 2rem; /* höherer Header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    header h1 { 
-      margin:0; 
-      font-size:2rem; 
+    .logo-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .logo-circle img {
+      width: 80%;
+      height: auto;
+      border-radius: 50%;
+    }
+    header h1 {
+      margin:0.5rem 0 0.5rem 0;
+      font-size:2.5rem;
+    }
+    header p {
+      margin:0;
+      font-size:1.25rem;
     }
 
+    /* CAMPER CONTAINER */
     .camper-container {
       display: flex;
       justify-content: center;
@@ -77,16 +103,18 @@
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header>
-  <div class="logo-circle">
-    <img src="logo.png" alt="Logo Camper" />
-  </div>
-  <h1>Miete meinen Camper</h1>
-  <p>Jetzt Mercedes Marco Polo mieten & Abenteuer starten!</p>
-</header>
+    <div class="logo-circle">
+      <img src="logo.png" alt="Logo Camper" />
+    </div>
+    <h1>Miete meinen Camper</h1>
+    <p>Jetzt Mercedes Marco Polo mieten & Abenteuer starten!</p>
+  </header>
 
+  <!-- CAMPER-BILDER -->
   <div class="camper-container">
-    <!-- Yescapa: Camper2.jpg links -->
+    <!-- Yescapa links -->
     <div class="camper" data-delay="0">
       <a href="https://yescapa.de/campers/109345" target="_blank">
         <img src="Camper2.jpg" alt="Camper Yescapa">
@@ -94,7 +122,7 @@
       </a>
     </div>
 
-    <!-- Paul-Camper: Camper1.jpg rechts -->
+    <!-- Paul-Camper rechts -->
     <div class="camper" data-delay="200">
       <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
         <img src="Camper1.jpg" alt="Camper Paul-Camper">
@@ -103,16 +131,17 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     &copy; 2026 Camper-Mieten
   </footer>
 
+  <!-- ANIMATION SCRIPT -->
   <script>
     const campers = document.querySelectorAll('.camper');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
-          // Zeitverzögerung aus data-delay auslesen
           const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
           setTimeout(() => {
             entry.target.classList.add('visible');
