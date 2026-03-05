@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Camper mieten</title>
 
 <!-- Google Fonts -->
@@ -58,28 +57,47 @@ header p {
   margin: 0;
 }
 
-/* ZITAT */
+/* ZITATBOX */
 .quote {
-  max-width: 900px;
-  margin: 3rem auto 4rem auto;
-  background: #fffdfa;
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #333;
   position: relative;
+  max-width: 800px;
+  margin: -50px auto 4rem auto; /* überlappt Header */
+  background: #fffdfa;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #333;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 1s ease-out;
+}
+
+.quote.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .quote .quote-mark {
-  font-size: 4rem;
+  font-size: 3.5rem;
   vertical-align: top;
   color: #C8AD7E;
   font-weight: 700;
   margin: 0 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .quote {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  .quote .quote-mark {
+    font-size: 3rem;
+  }
 }
 
 /* CAMPER CONTAINER */
@@ -187,7 +205,6 @@ footer {
 html { scroll-behavior: smooth; }
 </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -199,7 +216,7 @@ html { scroll-behavior: smooth; }
   <p>Mercedes Marco Polo mieten & Abenteuer starten</p>
 </header>
 
-<!-- ZITAT -->
+<!-- ZITATBOX -->
 <div class="quote">
   <span class="quote-mark">»</span>
   Die einzige Reise, die man bereut, ist die, die man nicht macht.
@@ -231,7 +248,7 @@ html { scroll-behavior: smooth; }
     <img src="vermieter.jpg" alt="Vermieter">
   </div>
   <h2>Über den Vermieter</h2>
-  <p>Hi, ich bin René und liebe es, Menschen Freiheit auf Reisen zu ermöglichen. Mit meinem Mercedes Marco Polo Camper kannst du spontan die schönsten Orte entdecken und unvergessliche Erinnerungen sammeln.</p>
+  <p>Hi, ich bin René und liebe es, Menschen die Freiheit auf Reisen zu ermöglichen. Mit meinem Mercedes Marco Polo Camper kannst du spontan die schönsten Orte entdecken und unvergessliche Erinnerungen sammeln.</p>
 </div>
 
 <!-- FOOTER -->
@@ -241,6 +258,7 @@ html { scroll-behavior: smooth; }
 
 <!-- ANIMATION SCRIPT -->
 <script>
+// Camper Animation
 const campers = document.querySelectorAll('.camper');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -252,9 +270,18 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.2 });
-
 campers.forEach(el => observer.observe(el));
-</script>
 
+// Zitat Animation
+const quote = document.querySelector('.quote');
+const observerQuote = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+observerQuote.observe(quote);
+</script>
 </body>
 </html>
