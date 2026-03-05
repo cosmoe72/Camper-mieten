@@ -28,8 +28,8 @@ header {
 }
 
 .logo-circle {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: white;
   display: flex;
@@ -40,8 +40,8 @@ header {
 }
 
 .logo-circle img {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   object-fit: contain;
 }
 
@@ -73,14 +73,14 @@ header p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 2.5rem; /* etwas mehr Abstand */
   padding: 2rem;
 }
 
 .camper {
   position: relative;
-  max-width: 500px;
-  flex: 1 1 320px;
+  max-width: 550px; /* größer als vorher */
+  flex: 1 1 350px;  /* mehr Breite auf Desktop */
   border-radius: 10px;
   overflow: hidden;
   opacity: 0;
@@ -102,20 +102,21 @@ header p {
 /* Button auf Bild */
 .camper .button {
   position: absolute;
-  bottom: 20px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-  background: #C8AD7E;
-  color: white;
-  padding: 0.9rem 1.4rem;
+  background: white; /* weißer Button */
+  color: #C8AD7E;   /* Text in vorheriger Buttonfarbe */
+  padding: 1.1rem 1.6rem; /* größer */
   border-radius: 30px;
-  font-weight: 400;
-  font-size: 0.95rem;
+  font-weight: 500;
+  font-size: 1rem;   /* etwas größer */
   transition: 0.3s;
 }
 
 .camper .button:hover {
-  background: #B9985C;
+  background: #C8AD7E; /* invertiert */
+  color: white;         /* Text weiß */
 }
 
 a {
