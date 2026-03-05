@@ -5,13 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camper mieten</title>
   <style>
-    body { font-family: -apple-system, sans-serif; margin:0; padding:0; background:#f8f8f8; text-align:center;}
-    header { background:#C8AD7E; color:white; padding:2rem;}
-    header h1 { margin:0; font-size:2rem; }
-    .images img { width:90%; max-width:500px; margin:1rem 0; border-radius:8px; }
-    .links { margin:2rem 0; }
-    .links a { display:block; margin:0.5rem 0; text-decoration:none; color:white; background:#C8AD7E; padding:1rem; border-radius:8px; font-weight:bold; max-width:300px; margin-left:auto; margin-right:auto;}
-    footer { margin:2rem 0; font-size:0.8rem; color:#C8AD7E; }
+    body { 
+      font-family: -apple-system, sans-serif; 
+      margin:0; padding:0; 
+      background:#f8f8f8; 
+      text-align:center;
+    }
+    header { 
+      background:#C8AD7E; 
+      color:white; 
+      padding:2rem;
+    }
+    header h1 { 
+      margin:0; 
+      font-size:2rem; 
+    }
+
+    .camper {
+      margin:2rem 0;
+      display: inline-block;
+      max-width: 90%;
+    }
+    .camper a {
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+    .camper img {
+      width: 100%;
+      max-width: 500px;
+      border-radius:8px;
+      height: auto;
+      display:block;
+      margin-bottom: 0.5rem;
+    }
+    .camper .button {
+      background: #C8AD7E;
+      padding: 1rem;
+      border-radius:8px;
+      font-weight:bold;
+      transition: 0.3s;
+    }
+    .camper .button:hover {
+      background: #B9985C;
+    }
+
+    footer { 
+      margin:2rem 0; 
+      padding:1rem 0;
+      font-size:0.8rem; 
+      color:#C8AD7E; 
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
@@ -20,14 +68,18 @@
     <p>Jetzt Mercedes Marco Polo mieten & Abenteuer starten!</p>
   </header>
 
-  <div class="images">
-    <img src="Camper1.jpg" alt="Camper Bild 1">
-    <img src="Camper2.jpg" alt="Camper Bild 2">
+  <div class="camper">
+    <a href="https://yescapa.de/campers/109345" target="_blank">
+      <img src="Camper1.jpg" alt="Camper Bild 1">
+      <div class="button">Marco-Polo Camper auf Yescapa mieten</div>
+    </a>
   </div>
 
-  <div class="links">
-    <a href="https://yescapa.de/campers/109345" target="_blank">Marco-Polo Camper auf Yescapa mieten</a>
-    <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">Marco-Polo Camper auf Paul-Camper mieten</a>
+  <div class="camper">
+    <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
+      <img src="Camper2.jpg" alt="Camper Bild 2">
+      <div class="button">Marco-Polo Camper auf Paul-Camper mieten</div>
+    </a>
   </div>
 
   <footer>
