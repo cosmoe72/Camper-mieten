@@ -26,30 +26,7 @@ padding:4rem 2rem 2rem;
 display:flex;
 flex-direction:column;
 align-items:center;
-position:relative;
-overflow:hidden;
 }
-
-/* leichte Struktur */
-
-header:after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background-image:radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-background-size:18px 18px;
-opacity:0.3;
-}
-
-header *{
-position:relative;
-z-index:2;
-}
-
-/* LOGO */
 
 .logo-circle{
 width:150px;
@@ -70,53 +47,45 @@ object-fit:contain;
 }
 
 header h1{
-font-size:3.2rem;
+font-size:3rem;
 font-weight:700;
 margin:0.5rem 0;
 }
 
 header p{
 font-weight:300;
-font-size:1.25rem;
+font-size:1.2rem;
 margin:0;
 }
 
-/* Sterne */
-
-.stars{
-margin-top:0.8rem;
-font-size:1.2rem;
-letter-spacing:3px;
-}
-
-/* QUOTE */
+/* Zitat */
 
 .quote{
 max-width:700px;
-margin:2.5rem auto 1rem;
-font-size:1.3rem;
+margin:2.5rem auto;
+font-size:1.25rem;
 font-weight:300;
 font-style:italic;
 color:#333;
 padding:0 1rem;
 }
 
-/* CAMPER */
+/* Camper */
 
 .camper-container{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
+flex-wrap:wrap;
 gap:2rem;
 padding:2rem;
 }
 
 .camper{
 position:relative;
-max-width:520px;
+max-width:500px;
 flex:1 1 320px;
-overflow:hidden;
 border-radius:10px;
+overflow:hidden;
 
 opacity:0;
 transform:translateY(60px);
@@ -132,12 +101,9 @@ transform:translateY(0);
 width:100%;
 display:block;
 border-radius:10px;
-transition:transform .6s ease;
 }
 
-.camper:hover img{
-transform:scale(1.05);
-}
+/* Button auf Bild */
 
 .button{
 position:absolute;
@@ -150,43 +116,18 @@ padding:0.9rem 1.4rem;
 border-radius:30px;
 font-weight:400;
 font-size:0.95rem;
-transition:.3s;
-}
-
-.camper:hover .button{
-background:#b9985c;
 }
 
 a{
 text-decoration:none;
 }
 
-/* FOOTER */
+/* Footer */
 
 footer{
 margin:3rem 0;
 font-size:0.8rem;
 color:#C8AD7E;
-}
-
-/* WHATSAPP BUTTON */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:14px 18px;
-border-radius:40px;
-font-size:15px;
-text-decoration:none;
-box-shadow:0 6px 18px rgba(0,0,0,0.25);
-transition:0.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.05);
 }
 
 </style>
@@ -197,67 +138,39 @@ transform:scale(1.05);
 <header>
 
 <div class="logo-circle">
-<img src="logo.png">
+<img src="logo.png" alt="Logo">
 </div>
 
 <h1>Miete meinen Camper</h1>
 <p>Mercedes Marco Polo mieten & Abenteuer starten</p>
 
-<div class="stars">
-★★★★★
-</div>
-
 </header>
-
 
 <div class="quote">
 „Die schönsten Erinnerungen sammelt man auf Reisen – nicht auf dem Sofa.“
 </div>
 
-
 <div class="camper-container">
 
 <a href="https://yescapa.de/campers/109345" target="_blank">
-
 <div class="camper" data-delay="0">
-
-<img src="Camper2.jpg">
-
-<div class="button">
-Auf Yescapa mieten
+<img src="Camper2.jpg" alt="Camper Yescapa">
+<div class="button">Auf Yescapa mieten</div>
 </div>
-
-</div>
-
 </a>
-
 
 <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
-
 <div class="camper" data-delay="250">
-
-<img src="Camper1.jpg">
-
-<div class="button">
-Auf PaulCamper mieten
+<img src="Camper1.jpg" alt="Camper PaulCamper">
+<div class="button">Auf PaulCamper mieten</div>
 </div>
-
-</div>
-
 </a>
 
 </div>
-
 
 <footer>
 © 2026 Camper
 </footer>
-
-
-<a class="whatsapp" href="https://wa.me/49123456789" target="_blank">
-WhatsApp Anfrage
-</a>
-
 
 <script>
 
