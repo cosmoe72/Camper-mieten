@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camper mieten</title>
+
+  <!-- Google Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
   <style>
     body { 
-      font-family: -apple-system, sans-serif; 
+      font-family: 'Poppins', -apple-system, sans-serif;
       margin:0; padding:0; 
       background:#f8f8f8; 
       text-align:center;
@@ -23,7 +27,7 @@
       justify-content: center;
     }
 
-    /* Logo-Kreis mit Schatten */
+    /* Logo-Kreis mit Shadow */
     .logo-circle {
       width: 200px;
       height: 200px;
@@ -33,14 +37,13 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* weicher Shadow */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     }
 
-    /* Logo im Kreis perfekt zentriert */
     .logo-circle img {
       width: 90%;
       height: 90%;
-      object-fit: cover; /* Inhalt zentriert, füllt Kreis */
+      object-fit: cover;
       border-radius: 50%;
       display: block;
       margin: auto;
@@ -48,11 +51,14 @@
 
     header h1 {
       margin:0.5rem 0 0.5rem 0;
-      font-size:2.5rem;
+      font-size:3rem;
+      font-weight: 700; /* Bold */
     }
+
     header p {
       margin:0;
       font-size:1.25rem;
+      font-weight: 300; /* Light */
     }
 
     /* CAMPER CONTAINER */
@@ -96,7 +102,7 @@
       background: #C8AD7E;
       padding: 1rem;
       border-radius:8px;
-      font-weight:bold;
+      font-weight: 500;
       transition: 0.3s;
     }
 
