@@ -21,82 +21,40 @@ body {
 header {
   background: linear-gradient(135deg, #C8AD7E 0%, #D6BA85 100%);
   color:white;
-  padding: 2.5rem 2rem 2rem; /* bisher 5rem oben, jetzt 2.5rem -> Logo höher */
+  padding: 2.5rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .logo-circle {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem; /* bisher 1.5rem -> jetzt 50% weniger */
+  margin-bottom: 0.75rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 .logo-circle img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
 }
 
 header h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0.25rem 0 0.1rem 0; /* bisher 0.5rem / 0.2rem -> jetzt 50% weniger */
+  margin: 0.25rem 0 0.1rem 0;
 }
 
 header p {
   font-weight: 300;
   font-size: 1.25rem;
-  margin: 0; /* bleibt, Text wandert mit H1 */
-}
-
-/* ZITATBOX */
-.quote {
-  position: relative;
-  max-width: 700px;
-  margin: 30px auto 4rem auto; /* Abstand nach oben vergrößert, jetzt 30px statt -30px */
-  padding: 1.5rem 1.5rem; /* Höhe reduziert, ca. 25% flacher */
-  font-size: 1.75rem;
-  line-height: 1.4;
-  font-family: 'Georgia', serif;
-  text-align: center;
-  background: #fffdfa;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  opacity: 0;
-  transform: translateY(-20px); /* sanfte Einfahrt von oben */
-  transition: all 1s ease-out;
-  word-break: break-word;
-}
-
-.quote.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.quote .quote-mark {
-  font-size: 3.5rem;
-  vertical-align: top;
-  color: #C8AD7E;
-  font-weight: 700;
-  margin: 0 0.2rem;
-}
-
-@media (max-width: 768px) {
-  .quote {
-    font-size: 1.5rem;
-    padding: 1.5rem 1rem;
-  }
-  .quote .quote-mark {
-    font-size: 3rem;
-  }
+  margin: 0;
 }
 
 /* CAMPER CONTAINER */
@@ -105,8 +63,8 @@ header p {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2.5rem;
-  padding: 0 2rem 2rem; /* Oben padding 0, nur seitlich + unten */
-  margin-top: 30px; /* Abstand zur Zitatbox = Abstand Header → Zitatbox */
+  padding: 0 2rem 2rem; /* Oben padding = 0, unten 2rem */
+  margin-top: 30px; /* Abstand Header → Camper-Bilder */
 }
 
 .camper {
@@ -152,6 +110,37 @@ header p {
 }
 
 a { text-decoration: none; }
+
+/* ZITATBOX NACH BILDERN */
+.quote {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem 1.5rem; /* flach */
+  font-size: 1.75rem;
+  line-height: 1.4;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  background: #fffdfa;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+  word-break: break-word;
+}
+
+.quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote .quote-mark {
+  font-size: 3.5rem;
+  vertical-align: top;
+  color: #C8AD7E;
+  font-weight: 700;
+  margin: 0 0.2rem;
+}
 
 /* VERMIEETER SEKTOR */
 .owner-section {
@@ -203,6 +192,7 @@ footer {
 
 /* Smooth scroll */
 html { scroll-behavior: smooth; }
+
 </style>
 </head>
 <body>
@@ -216,16 +206,8 @@ html { scroll-behavior: smooth; }
   <p>Mercedes Marco Polo mieten & Abenteuer starten</p>
 </header>
 
-<!-- ZITATBOX -->
-<div class="quote">
-  <span class="quote-mark">»</span>
-  Die einzige Reise, die man <wbr>bereut, ist die, die man nicht macht.
-  <span class="quote-mark">«</span>
-</div>
-
-<!-- CAMPER -->
+<!-- CAMPER-BILDER -->
 <div class="camper-container">
-  <!-- Yescapa links -->
   <div class="camper" data-delay="0">
     <a href="https://yescapa.de/campers/109345" target="_blank">
       <img src="Camper2.jpg" alt="Camper Yescapa">
@@ -233,13 +215,19 @@ html { scroll-behavior: smooth; }
     </a>
   </div>
 
-  <!-- Paul-Camper rechts -->
   <div class="camper" data-delay="250">
     <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
       <img src="Camper1.jpg" alt="Camper PaulCamper">
       <div class="button">Auf PaulCamper mieten</div>
     </a>
   </div>
+</div>
+
+<!-- ZITATBOX -->
+<div class="quote">
+  <span class="quote-mark">»</span>
+  Die einzige Reise, die man <wbr>bereut, ist die, die man nicht macht.
+  <span class="quote-mark">«</span>
 </div>
 
 <!-- VERMIEETER -->
