@@ -69,7 +69,7 @@ h1{
   justify-content:center;
   flex-wrap:wrap;
   gap:1.5rem;
-  margin-top:-50px;
+  margin-top:40px; /* Abstand zum Header */
 }
 
 .camper{
@@ -79,7 +79,6 @@ h1{
   opacity:0;
   transform: translateY(50px);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-  overflow:hidden;
 }
 
 .camper.visible{
@@ -87,15 +86,21 @@ h1{
   transform: translateY(0);
 }
 
-.camper img{
+/* Bild-Container für runde Ecken */
+.camper .img-container{
   width:100%;
   border-radius:12px;
-  height:auto;
-  display:block;
-  transition:transform 6s ease;
+  overflow:hidden;
 }
 
-.camper:hover img{
+.camper .img-container img{
+  width:100%;
+  height:auto;
+  display:block;
+  transition:transform 0.6s ease;
+}
+
+.camper:hover .img-container img{
   transform:scale(1.08);
 }
 
@@ -122,12 +127,13 @@ h1{
   background:#f7f3ea;
   padding:50px 20px;
   text-align:center;
+  margin-top:40px; /* Abstand zu Camper-Bildern */
 }
 
 .quote-text{
   font-family:"Playfair Display",serif;
   font-style:italic;
-  font-size:38px;
+  font-size:42px;
   line-height:1.1;
   max-width:800px;
   margin:auto;
@@ -195,7 +201,7 @@ h1{
     <img src="logo.png" alt="Logo Camper">
   </div>
   <h1>Camper mieten</h1>
-  <p class="sub">Merceds V-Klasse Marco Polo für deine Traumreise mieten</p>
+  <p class="sub">Mercedes V-Klasse Marco Polo für deine Traumreise mieten</p>
 </header>
 
 <div class="container">
@@ -203,7 +209,9 @@ h1{
 
     <div class="camper" data-delay="0">
       <a href="https://www.yescapa.de" target="_blank">
-        <img src="camper2.jpg" alt="Camper Yescapa">
+        <div class="img-container">
+          <img src="camper2.jpg" alt="Camper Yescapa">
+        </div>
       </a>
       <a class="button" href="https://www.yescapa.de" target="_blank">
         Camper über Yescapa mieten
@@ -212,7 +220,9 @@ h1{
 
     <div class="camper" data-delay="200">
       <a href="https://www.paulcamper.de" target="_blank">
-        <img src="camper1.jpg" alt="Camper PaulCamper">
+        <div class="img-container">
+          <img src="camper1.jpg" alt="Camper PaulCamper">
+        </div>
       </a>
       <a class="button" href="https://www.paulcamper.de" target="_blank">
         Camper über PaulCamper mieten
