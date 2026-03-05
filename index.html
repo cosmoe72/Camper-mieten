@@ -6,196 +6,187 @@
 
 <title>Camper mieten</title>
 
+<!-- Google Font Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-
-body{
-font-family:'Poppins',sans-serif;
-margin:0;
-background:#f8f8f8;
-text-align:center;
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+  text-align: center;
 }
 
 /* HEADER */
-
-header{
-background:#C8AD7E;
-color:white;
-padding:4rem 2rem 2rem;
-display:flex;
-flex-direction:column;
-align-items:center;
+header {
+  background: #C8AD7E;
+  color: white;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo-circle{
-width:150px;
-height:150px;
-border-radius:50%;
-background:white;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:1.5rem;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
+.logo-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-.logo-circle img{
-width:80%;
-height:80%;
-object-fit:contain;
+.logo-circle img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
 }
 
-header h1{
-font-size:3rem;
-font-weight:700;
-margin:0.5rem 0;
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
 }
 
-header p{
-font-weight:300;
-font-size:1.2rem;
-margin:0;
+header p {
+  font-weight: 300;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 /* Zitat */
-
-.quote{
-max-width:700px;
-margin:2.5rem auto;
-font-size:1.25rem;
-font-weight:300;
-font-style:italic;
-color:#333;
-padding:0 1rem;
+.quote {
+  max-width: 700px;
+  margin: 2rem auto;
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #333;
+  padding: 0 1rem;
 }
 
-/* Camper */
-
-.camper-container{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:2rem;
-padding:2rem;
+/* Camper Container */
+.camper-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.camper{
-position:relative;
-max-width:500px;
-flex:1 1 320px;
-border-radius:10px;
-overflow:hidden;
-
-opacity:0;
-transform:translateY(60px);
-transition:all .9s ease;
+.camper {
+  position: relative;
+  max-width: 500px;
+  flex: 1 1 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
 }
 
-.camper.visible{
-opacity:1;
-transform:translateY(0);
+.camper.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.camper img{
-width:100%;
-display:block;
-border-radius:10px;
+.camper img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
 }
 
 /* Button auf Bild */
-
-.button{
-position:absolute;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-background:#C8AD7E;
-color:white;
-padding:0.9rem 1.4rem;
-border-radius:30px;
-font-weight:400;
-font-size:0.95rem;
+.camper .button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #C8AD7E;
+  color: white;
+  padding: 0.9rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 400;
+  font-size: 0.95rem;
+  transition: 0.3s;
 }
 
-a{
-text-decoration:none;
+.camper .button:hover {
+  background: #B9985C;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Footer */
-
-footer{
-margin:3rem 0;
-font-size:0.8rem;
-color:#C8AD7E;
+footer {
+  margin: 3rem 0;
+  font-size: 0.8rem;
+  color: #C8AD7E;
 }
 
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="logo-circle">
-<img src="logo.png" alt="Logo">
-</div>
-
-<h1>Miete meinen Camper</h1>
-<p>Mercedes Marco Polo mieten & Abenteuer starten</p>
-
+  <div class="logo-circle">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <h1>Miete meinen Camper</h1>
+  <p>Mercedes Marco Polo mieten & Abenteuer starten</p>
 </header>
 
 <div class="quote">
-„Die schönsten Erinnerungen sammelt man auf Reisen – nicht auf dem Sofa.“
+  „Die schönsten Erinnerungen sammelt man auf Reisen – nicht auf dem Sofa.“
 </div>
 
 <div class="camper-container">
+  <!-- Yescapa links -->
+  <div class="camper" data-delay="0">
+    <a href="https://yescapa.de/campers/109345" target="_blank">
+      <img src="Camper2.jpg" alt="Camper Yescapa">
+      <div class="button">Auf Yescapa mieten</div>
+    </a>
+  </div>
 
-<a href="https://yescapa.de/campers/109345" target="_blank">
-<div class="camper" data-delay="0">
-<img src="Camper2.jpg" alt="Camper Yescapa">
-<div class="button">Auf Yescapa mieten</div>
-</div>
-</a>
-
-<a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
-<div class="camper" data-delay="250">
-<img src="Camper1.jpg" alt="Camper PaulCamper">
-<div class="button">Auf PaulCamper mieten</div>
-</div>
-</a>
-
+  <!-- Paul-Camper rechts -->
+  <div class="camper" data-delay="250">
+    <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
+      <img src="Camper1.jpg" alt="Camper PaulCamper">
+      <div class="button">Auf PaulCamper mieten</div>
+    </a>
+  </div>
 </div>
 
 <footer>
-© 2026 Camper
+  © 2026 Camper
 </footer>
 
+<!-- Scroll Animation Script -->
 <script>
+const campers = document.querySelectorAll('.camper');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const delay = parseInt(entry.target.dataset.delay) || 0;
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, delay);
+    }
+  });
+}, { threshold: 0.2 });
 
-const campers=document.querySelectorAll('.camper');
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-let delay=entry.target.dataset.delay;
-
-setTimeout(()=>{
-entry.target.classList.add('visible');
-},delay);
-
-}
-
-});
-
-},{threshold:0.2});
-
-campers.forEach(el=>observer.observe(el));
-
+campers.forEach(el => observer.observe(el));
 </script>
 
 </body>
