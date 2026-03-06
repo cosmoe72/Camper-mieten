@@ -24,7 +24,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:40px 20px 36px 20px; /* flacher gemacht */
+  padding:40px 20px 36px 20px; /* flacher */
   text-align: center;
   position: relative;
 }
@@ -35,9 +35,7 @@ header{
   border-radius:50%;
   overflow:hidden;
   margin-bottom:10px;
-  
-  /* stärkerer Glow-Effekt */
-  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7);
+  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7); /* Glow */
 }
   
 .logo-circle img{
@@ -113,7 +111,7 @@ h1{
   border:2px solid #C8AD7E;
   background:white;
   color:#C8AD7E;
-  font-weight:600;
+  font-weight:300; /* normalisiert */
   text-decoration:none;
   transition:all 0.3s ease;
 }
@@ -154,8 +152,8 @@ h1{
 .features{
   display:flex;
   justify-content:center;
-  gap:80px; /* Abstand zwischen Icons */
-  margin:30px 0; /* bisher 60px -> halbiert */
+  gap:80px;
+  margin:50px 0 20px 0; /* Oben größer, unten kleiner */
   flex-wrap:wrap;
   text-align:center;
 }
@@ -178,16 +176,16 @@ h1{
 }
 
 .feature p{
-  font-weight:300;
+  font-weight:300; /* normal wie Buttons */
   font-size:16px;
   margin:0;
-  color:#333;
+  color:#C8AD7E; /* gleiche Farbe wie Links */
 }
 
 /* ÜBER MICH */
 .about{
   text-align:center;
-  padding:80px 20px;
+  padding:40px 20px 80px 20px; /* Oben halbiert */
 }
 
 .about-circle{
