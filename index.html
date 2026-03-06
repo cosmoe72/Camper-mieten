@@ -24,7 +24,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:72px 20px 36px 20px; /* vorher 90px 20px 45px -> 20% reduziert */
+  padding:72px 20px 36px 20px;
   text-align: center;
   position: relative;
 }
@@ -34,8 +34,9 @@ header{
   height:200px;
   border-radius:50%;
   overflow:hidden;
-  box-shadow:0 20px 40px rgba(0,0,0,0.25);
   margin-bottom:10px;
+  /* Glow-Effekt statt Shadow */
+  box-shadow: 0 0 60px 15px rgba(200,173,126,0.5);
 }
 
 .logo-circle img{
@@ -69,7 +70,7 @@ h1{
   justify-content:center;
   flex-wrap:wrap;
   gap:1.5rem;
-  margin-top:20px; /* vorher 40px -> Abstand zu Header verkleinert */
+  margin-top:20px;
 }
 
 .camper{
@@ -86,7 +87,6 @@ h1{
   transform: translateY(0);
 }
 
-/* Bild-Container für runde Ecken */
 .camper .img-container{
   width:100%;
   border-radius:12px;
@@ -127,7 +127,7 @@ h1{
   background:#f7f3ea;
   padding:50px 20px;
   text-align:center;
-  margin-top:40px; /* Abstand zu Camper-Bildern */
+  margin-top:40px;
 }
 
 .quote-text{
@@ -147,6 +147,40 @@ h1{
 .quote-text::after{
   content:" «";
   font-size:1.3em;
+}
+
+/* FEATURES SECTION */
+.features{
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  margin:40px 0;
+  flex-wrap:wrap;
+  text-align:center;
+}
+
+.feature{
+  opacity:0;
+  transform: translateY(50px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.feature.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.feature img{
+  width:60px;
+  height:60px;
+  margin-bottom:10px;
+}
+
+.feature p{
+  font-weight:300;
+  font-size:16px;
+  margin:0;
+  color:#333;
 }
 
 /* ÜBER MICH */
@@ -179,7 +213,8 @@ h1{
   line-height:1.6;
 }
 
-  footer{
+/* FOOTER */
+footer{
   text-align:center;
   padding:30px 20px;
   font-size:14px;
@@ -206,6 +241,13 @@ footer a:hover{
   }
   .quote-text{
     font-size:30px;
+  }
+  .features img{
+    width:50px;
+    height:50px;
+  }
+  .feature p{
+    font-size:14px;
   }
 }
 </style>
@@ -256,6 +298,22 @@ footer a:hover{
   </p>
 </section>
 
+<!-- FEATURE ICONS -->
+<section class="features">
+  <div class="feature" data-delay="0">
+    <img src="icon-allrad.png" alt="Allradantrieb">
+    <p>Allradantrieb</p>
+  </div>
+  <div class="feature" data-delay="150">
+    <img src="icon-schlafplaetze.png" alt="Vier Schlafplätze">
+    <p>Vier Schlafplätze</p>
+  </div>
+  <div class="feature" data-delay="300">
+    <img src="icon-kueche.png" alt="Integrierte Küche">
+    <p>Integrierte Küche</p>
+  </div>
+</section>
+
 <section class="about">
   <div class="about-circle">
     <img src="vermieter.png" alt="Vermieter">
@@ -270,6 +328,8 @@ footer a:hover{
 
 <script>
 const campers = document.querySelectorAll('.camper');
+const features = document.querySelectorAll('.feature');
+
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -280,12 +340,14 @@ const observer = new IntersectionObserver((entries)=>{
     }
   });
 },{threshold:0.1});
+
 campers.forEach(c=>observer.observe(c));
+features.forEach(f=>observer.observe(f));
 </script>
-  
+
 <footer>
   <p>© 2026 René Götzenbrugger · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
 </footer>
-  
+
 </body>
 </html>
