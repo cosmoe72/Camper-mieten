@@ -105,7 +105,7 @@ h1{
 .button{
   display:inline-block;
   margin-top:20px;
-  margin-bottom:10px; /* finale mobile Reduzierung */
+  margin-bottom:10px;
   padding:14px 28px;
   border-radius:6px;
   border:2px solid #C8AD7E;
@@ -153,7 +153,7 @@ h1{
   display:flex;
   justify-content:center;
   gap:80px;
-  margin:50px 0 60px 0; /* Abstand oben / unten */
+  margin:50px 0 60px 0;
   flex-wrap:wrap;
   text-align:center;
 }
@@ -177,7 +177,7 @@ h1{
 
 .feature p{
   font-weight:300;
-  font-size:18px; /* gleich wie Vermieter-Text */
+  font-size:18px;
   margin:0;
   color:#C8AD7E; 
   line-height:1.6;
@@ -256,16 +256,23 @@ footer a:hover{
   }
 
   .feature p{
-    font-size:18px; /* gleich wie Vermieter-Text */
+    font-size:18px;
   }
 
+  /* Link-Buttons Abstand reduzieren */
   .button{
-    margin-bottom:5px; /* noch mal 50% kleiner als vorher */
+    margin-bottom:5px; /* vorher 10px -> jetzt 50% */
   }
 
+  /* Features Bereich Abstände anpassen */
   .features{
     margin-top:30px;
     margin-bottom:30px;
+  }
+
+  /* Vermieter-Bild Abstand nach oben reduzieren */
+  .about-circle{
+    margin-bottom:10px; /* vorher 20px -> jetzt 50% */
   }
 }
 </style>
