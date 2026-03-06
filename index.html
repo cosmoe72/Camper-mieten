@@ -89,6 +89,7 @@ h1{
   width:100%;
   border-radius:12px;
   overflow:hidden;
+  margin-bottom:20px; /* Abstand Bild → Button standard */
 }
 
 .camper .img-container img{
@@ -240,6 +241,7 @@ footer a:hover{
   .camper-container{
     flex-direction:column;
     align-items:center;
+    gap:0.75rem; /* Abstand zwischen Camper-Boxen halbiert */
   }
 
   h1{
@@ -259,20 +261,25 @@ footer a:hover{
     font-size:18px;
   }
 
-  /* Link-Buttons Abstand reduzieren */
+  /* Abstand unter den Buttons */
   .button{
-    margin-bottom:5px; /* vorher 10px -> jetzt 50% */
+    margin-bottom:5px !important;
   }
 
-  /* Features Bereich Abstände anpassen */
+  /* Abstand zwischen Bild und Button in Camper-Boxen */
+  .camper .img-container{
+    margin-bottom:5px !important;
+  }
+
+  /* Abstand Vermieter-Bild nach oben reduzieren */
+  .about-circle{
+    margin-bottom:10px !important;
+  }
+
+  /* Abstand Features */
   .features{
     margin-top:30px;
     margin-bottom:30px;
-  }
-
-  /* Vermieter-Bild Abstand nach oben reduzieren */
-  .about-circle{
-    margin-bottom:10px; /* vorher 20px -> jetzt 50% */
   }
 }
 </style>
