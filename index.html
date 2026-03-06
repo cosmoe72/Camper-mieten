@@ -23,7 +23,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:40px 20px 36px 20px; /* flacher gemacht */
+  padding:40px 20px 36px 20px;
   text-align: center;
   position: relative;
 }
@@ -105,13 +105,13 @@ h1{
 .button{
   display:inline-block;
   margin-top:20px;
-  margin-bottom:20px; /* Abstand nach unten */
+  margin-bottom:20px;
   padding:14px 28px;
   border-radius:6px;
   border:2px solid #C8AD7E;
   background:white;
   color:#C8AD7E;
-  font-weight:300; /* wie Feature-Text */
+  font-weight:300;
   text-decoration:none;
   transition:all 0.3s ease;
 }
@@ -152,9 +152,8 @@ h1{
 .features{
   display:flex;
   justify-content:center;
-  gap:80px; /* Abstand zwischen Icons */
-  margin-top:60px; /* mehr Abstand zur Zitatbox */
-  margin-bottom:40px; /* Abstand zum Vermieter */
+  gap:80px;
+  margin:50px 0; /* Abstand zu Quote & Vermieter */
   flex-wrap:wrap;
   text-align:center;
 }
@@ -178,9 +177,9 @@ h1{
 
 .feature p{
   font-weight:300;
-  font-size:18px; /* gleich wie über Vermieter */
+  font-size:18px; /* gleiche Größe wie Vermieter-Text */
   margin:0;
-  color:#C8AD7E; /* gleiche Farbe wie Links */
+  color:#C8AD7E;
   line-height:1.6;
 }
 
@@ -252,14 +251,16 @@ footer a:hover{
     height:50px;
   }
   .feature p{
-    font-size:18px; /* gleich wie über Vermieter */
+    font-size:18px; /* bleibt gleich wie Vermieter */
   }
+  /* Mobile Buttons kleiner Abstand */
   .button{
-    margin-bottom:10px; /* weniger Abstand auf Mobil */
+    margin-bottom:10px !important;
   }
+  /* Abstand vor/zwischen Features auf Mobil */
   .features{
-    margin-top:40px; /* Abstand über Features auf Mobil */
-    margin-bottom:30px; /* Abstand unter Features auf Mobil */
+    margin-top:40px;
+    margin-bottom:30px;
   }
 }
 </style>
