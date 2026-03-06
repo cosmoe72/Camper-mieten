@@ -34,7 +34,6 @@ header{
   border-radius:50%;
   overflow:hidden;
   margin-bottom:10px;
-  /* Glow-Effekt */
   box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7);
 }
   
@@ -112,7 +111,7 @@ h1{
   border:2px solid #C8AD7E;
   background:white;
   color:#C8AD7E;
-  font-weight:300; /* gleich wie Feature-Text */
+  font-weight:300; /* wie Feature-Text */
   text-decoration:none;
   transition:all 0.3s ease;
 }
@@ -154,7 +153,8 @@ h1{
   display:flex;
   justify-content:center;
   gap:80px; /* Abstand zwischen Icons */
-  margin:40px 0;
+  margin-top:60px; /* mehr Abstand zur Zitatbox */
+  margin-bottom:40px; /* Abstand zum Vermieter */
   flex-wrap:wrap;
   text-align:center;
 }
@@ -178,7 +178,7 @@ h1{
 
 .feature p{
   font-weight:300;
-  font-size:18px;
+  font-size:18px; /* gleich wie über Vermieter */
   margin:0;
   color:#C8AD7E; /* gleiche Farbe wie Links */
   line-height:1.6;
@@ -235,13 +235,8 @@ footer a:hover{
 /* MOBILE ANPASSUNGEN */
 @media(max-width:900px){
   .container {
-    padding-bottom:20px; /* vorher 40px, reduziert */
+    padding-bottom:20px;
   }
-}
-  camper .button {
-    margin-bottom:10px; /* vorher 20px, jetzt kleiner */
-  }
-}
   .camper-container{
     flex-direction:column;
     align-items:center;
@@ -257,17 +252,14 @@ footer a:hover{
     height:50px;
   }
   .feature p{
-    font-size:14px;
+    font-size:18px; /* gleich wie über Vermieter */
   }
-
-  /* Abstand nach Buttons auf Mobil */
   .button{
-    margin-bottom:10px;
+    margin-bottom:10px; /* weniger Abstand auf Mobil */
   }
-  /* Abstand vor/zwischen Features auf Mobil */
   .features{
-    margin-top:20px;
-    margin-bottom:20px;
+    margin-top:40px; /* Abstand über Features auf Mobil */
+    margin-bottom:30px; /* Abstand unter Features auf Mobil */
   }
 }
 </style>
