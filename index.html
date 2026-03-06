@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Camper mieten - Freiheit genießen</title>
 
-<!-- Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
 <style>
@@ -24,7 +23,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:40px 20px 36px 20px; /* flacher */
+  padding:40px 20px 36px 20px; /* flacher gemacht */
   text-align: center;
   position: relative;
 }
@@ -35,7 +34,8 @@ header{
   border-radius:50%;
   overflow:hidden;
   margin-bottom:10px;
-  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7); /* Glow */
+  /* Glow-Effekt */
+  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7);
 }
   
 .logo-circle img{
@@ -106,12 +106,13 @@ h1{
 .button{
   display:inline-block;
   margin-top:20px;
+  margin-bottom:20px; /* Abstand nach unten */
   padding:14px 28px;
   border-radius:6px;
   border:2px solid #C8AD7E;
   background:white;
   color:#C8AD7E;
-  font-weight:300; /* normalisiert */
+  font-weight:300; /* gleich wie Feature-Text */
   text-decoration:none;
   transition:all 0.3s ease;
 }
@@ -152,8 +153,8 @@ h1{
 .features{
   display:flex;
   justify-content:center;
-  gap:80px;
-  margin:50px 0 20px 0; /* Oben größer, unten kleiner */
+  gap:80px; /* Abstand zwischen Icons */
+  margin:40px 0;
   flex-wrap:wrap;
   text-align:center;
 }
@@ -176,7 +177,7 @@ h1{
 }
 
 .feature p{
-  font-weight:300; /* normal wie Buttons */
+  font-weight:300;
   font-size:16px;
   margin:0;
   color:#C8AD7E; /* gleiche Farbe wie Links */
@@ -185,7 +186,7 @@ h1{
 /* ÜBER MICH */
 .about{
   text-align:center;
-  padding:40px 20px 80px 20px; /* Oben halbiert */
+  padding:80px 20px;
 }
 
 .about-circle{
@@ -230,10 +231,8 @@ footer a:hover{
   text-decoration:underline;
 }
 
+/* MOBILE ANPASSUNGEN */
 @media(max-width:900px){
-  .container{
-    padding:20px 20px;
-  }
   .camper-container{
     flex-direction:column;
     align-items:center;
@@ -250,6 +249,16 @@ footer a:hover{
   }
   .feature p{
     font-size:14px;
+  }
+
+  /* Abstand nach Buttons auf Mobil */
+  .button{
+    margin-bottom:10px;
+  }
+  /* Abstand vor/zwischen Features auf Mobil */
+  .features{
+    margin-top:20px;
+    margin-bottom:20px;
   }
 }
 </style>
