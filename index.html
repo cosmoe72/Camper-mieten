@@ -232,7 +232,7 @@ footer a:hover{
   text-decoration:underline;
 }
 
-/* MOBILE ANPASSUNGEN */
+/* TABLET & MOBILE ANPASSUNGEN */
 @media(max-width:900px){
   .container{
     padding:40px 20px 20px 20px;
@@ -241,7 +241,7 @@ footer a:hover{
   .camper-container{
     flex-direction:column !important;
     align-items:center !important;
-    gap:0.75rem !important; /* Abstand zwischen Camper-Boxen halbiert */
+    gap:0.75rem !important; /* Abstand Camper-Boxen Tablet */
   }
 
   h1{
@@ -261,25 +261,45 @@ footer a:hover{
     font-size:18px;
   }
 
-  /* Abstand zwischen Camper-Bild und Button */
   .camper .img-container{
     margin-bottom:5px !important;
   }
 
-  /* Abstand unter den Buttons */
   .button{
     margin-bottom:5px !important;
   }
 
-  /* Abstand Vermieter-Bild nach oben */
   .about-circle{
     margin-bottom:10px !important;
   }
 
-  /* Features Section Abstände */
   .features{
     margin-top:30px !important;
     margin-bottom:30px !important;
+  }
+}
+
+/* SMARTPHONE HOCHFORMAT */
+@media(max-width:600px){
+  .camper-container{
+    gap:0.5rem !important; /* Abstand Camper-Boxen klein */
+  }
+
+  .camper .img-container{
+    margin-bottom:3px !important;
+  }
+
+  .button{
+    margin-bottom:3px !important;
+  }
+
+  .about-circle{
+    margin-bottom:5px !important;
+  }
+
+  .features{
+    margin-top:20px !important;
+    margin-bottom:20px !important;
   }
 }
 </style>
@@ -330,7 +350,6 @@ footer a:hover{
   </p>
 </section>
 
-<!-- FEATURE ICONS -->
 <section class="features">
   <div class="feature" data-delay="0">
     <img src="Motor.png" alt="Allradantrieb">
