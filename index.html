@@ -87,7 +87,7 @@ h1{
   width:100%;
   border-radius:12px;
   overflow:hidden;
-  margin-bottom:20px; /* Desktop Abstand Bild → Button */
+  margin-bottom:20px; /* X */
 }
 
 .camper .img-container img{
@@ -104,7 +104,7 @@ h1{
 .button{
   display:inline-block;
   margin-top:20px;
-  margin-bottom:10px; /* Desktop */
+  margin-bottom:20px; /* X */
   padding:14px 28px;
   border-radius:6px;
   border:2px solid #C8AD7E;
@@ -234,45 +234,40 @@ footer a:hover{
 @media(max-width:900px){
   h1{ font-size:38px; }
   .quote-text{ font-size:30px; }
-
   .camper-container{
-    display:block; /* Flexbox aus, sauber Stapel */
+    display:block;
   }
-
   .camper{
-    margin-bottom:15px; /* Abstand Camper-Boxen Tablet */
+    margin-bottom:15px;
   }
-
-  .camper .img-container{
-    margin-bottom:8px; /* Bild → Button */
-  }
-
-  .button{
-    margin-bottom:8px;
-  }
-
-  .about-circle{
-    margin-bottom:12px;
-  }
-
-  .features{
-    margin-top:30px;
-    margin-bottom:30px;
-  }
+  .camper .img-container{ margin-bottom:8px; }
+  .button{ margin-bottom:8px; }
+  .about-circle{ margin-bottom:12px; }
+  .features{ margin-top:30px; margin-bottom:30px; }
 }
 
-/* SMARTPHONE HOCHFORMAT */
+/* MOBILE HOCHFORMAT */
 @media(max-width:600px){
-  .camper{
-    margin-bottom:10px; /* kompakte Boxen */
-  }
-
+  /* Standard Abstand Bild → Button = X */
   .camper .img-container{
-    margin-bottom:3px; /* Bild → Button sehr knapp */
+    margin-bottom:20px; /* X */
+  }
+  .camper .button{
+    margin-bottom:20px; /* X */
   }
 
-  .button{
-    margin-bottom:3px;
+  /* Button 1 → Bild 2 = 3×X */
+  .camper-container .camper:nth-child(1) .button{
+    margin-bottom:60px; /* 3×X */
+  }
+
+  /* Button 2 → Zitatbox = 3×X */
+  .camper-container .camper:nth-child(2) .button{
+    margin-bottom:60px; /* 3×X */
+  }
+
+  .camper{
+    margin-bottom:10px;
   }
 
   .about-circle{
