@@ -23,7 +23,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:40px 20px 36px 20px;
+  padding:40px 20px 36px 20px; /* flacher gemacht */
   text-align: center;
   position: relative;
 }
@@ -37,7 +37,7 @@ header{
   /* Glow-Effekt */
   box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7);
 }
-
+  
 .logo-circle img{
   width:100%;
   height:100%;
@@ -112,7 +112,7 @@ h1{
   border:2px solid #C8AD7E;
   background:white;
   color:#C8AD7E;
-  font-weight:300;
+  font-weight:300; /* wie Feature-Text */
   text-decoration:none;
   transition:all 0.3s ease;
 }
@@ -153,8 +153,8 @@ h1{
 .features{
   display:flex;
   justify-content:center;
-  gap:80px;
-  margin:60px 0; /* Abstand zur Zitatbox erhöht */
+  gap:80px; /* Abstand zwischen Icons */
+  margin:60px 0; /* größerer Abstand zur Zitatbox */
   flex-wrap:wrap;
   text-align:center;
 }
@@ -178,9 +178,9 @@ h1{
 
 .feature p{
   font-weight:300;
-  font-size:18px; /* gleiche Größe wie Vermietertext */
+  font-size:18px; /* gleich wie Vermieter-Text */
   margin:0;
-  color:#C8AD7E;
+  color:#C8AD7E; /* Farbe wie Links */
   line-height:1.6;
 }
 
@@ -234,41 +234,32 @@ footer a:hover{
 
 /* MOBILE ANPASSUNGEN */
 @media(max-width:900px){
-  .container {
-    padding-bottom:20px;
-  }
-
   .camper-container{
     flex-direction:column;
     align-items:center;
   }
-
   h1{
     font-size:38px;
   }
-
   .quote-text{
     font-size:30px;
   }
-
   .features img{
     width:50px;
     height:50px;
   }
-
   .feature p{
-    font-size:18px; /* gleiche Größe wie Vermietertext */
+    font-size:18px; /* bleibt gleich wie Vermieter-Text auf mobil */
   }
-
-  /* Mobile Buttons kleiner Abstand */
+  /* Abstand nach Buttons auf Mobil verringern */
   .button{
+    margin-top:10px !important;
     margin-bottom:10px !important;
   }
-
   /* Abstand vor/zwischen Features auf Mobil */
   .features{
-    margin-top:50px;
-    margin-bottom:40px;
+    margin-top:30px;
+    margin-bottom:30px;
   }
 }
 </style>
