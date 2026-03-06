@@ -23,7 +23,7 @@ header{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:40px 20px 36px 20px; /* flacher gemacht */
+  padding:40px 20px 36px 20px;
   text-align: center;
   position: relative;
 }
@@ -34,7 +34,7 @@ header{
   border-radius:50%;
   overflow:hidden;
   margin-bottom:10px;
-  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7); /* Glow-Effekt */
+  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7);
 }
 
 .logo-circle img{
@@ -105,13 +105,13 @@ h1{
 .button{
   display:inline-block;
   margin-top:20px;
-  margin-bottom:20px;
+  margin-bottom:20px; /* default für Desktop */
   padding:14px 28px;
   border-radius:6px;
   border:2px solid #C8AD7E;
   background:white;
   color:#C8AD7E;
-  font-weight:300; /* gleich wie Feature-Text */
+  font-weight:300;
   text-decoration:none;
   transition:all 0.3s ease;
 }
@@ -177,7 +177,7 @@ h1{
 
 .feature p{
   font-weight:300;
-  font-size:18px; /* gleiche Größe wie Vermieter-Text */
+  font-size:18px;
   margin:0;
   color:#C8AD7E;
   line-height:1.6;
@@ -244,21 +244,21 @@ footer a:hover{
     height:50px;
   }
   .feature p{
-    font-size:18px; /* gleiche Größe wie Vermieter-Text */
+    font-size:18px; /* gleich wie Vermieter-Text */
   }
 
-  /* Camper-Container auf Mobil: Abstand nach unten verringern */
+  /* Camper-Container auf Mobil: Abstand zwischen Boxen reduzieren */
   .camper-container {
     flex-direction: column;
     align-items: center;
     gap:10px;
-    margin-bottom:20px; /* Abstand zur Zitatbox */
+    margin-bottom:10px; /* Abstand zur Zitatbox */
   }
 
   /* Buttons: enger auf Mobil */
   .button{
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top:6px;
+    margin-bottom:6px;
   }
 
   /* Features: Abstand zur Quote und zwischen den Icons */
