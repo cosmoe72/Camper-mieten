@@ -608,6 +608,112 @@
     line-height: 1.7;
   }
 
+  /* ── GALLERY ── */
+  .gallery-section {
+    padding: 0 24px 120px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--cream);
+    aspect-ratio: 16/9;
+    max-height: 580px;
+  }
+
+  .carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,254,249,0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(184,152,106,0.25);
+    color: var(--gold-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  .carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .carousel-btn.prev { left: 16px; }
+  .carousel-btn.next { right: 16px; }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(184,152,106,0.3);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    padding: 0;
+  }
+
+  .carousel-dot.active {
+    background: var(--gold);
+    transform: scale(1.4);
+  }
+
+  .carousel-counter {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    background: rgba(26,26,26,0.5);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+    z-index: 10;
+  }
+
   /* ── SPECS ── */
   .specs-section {
     background: var(--cream);
@@ -1021,6 +1127,34 @@
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <span class="section-label">Impressionen</span>
+    <h2 class="section-title">Der Camper von allen Seiten</h2>
+  </div>
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide"><img src="camper1.jpg" alt="Mercedes Marco Polo Camper Außenansicht"></div>
+      <div class="carousel-slide"><img src="camper2.jpg" alt="Mercedes Marco Polo Camper Seitenansicht"></div>
+      <div class="carousel-slide"><img src="g1.jpg" alt="Marco Polo Camper Innenraum"></div>
+      <div class="carousel-slide"><img src="g2.jpg" alt="Marco Polo Aufstelldach"></div>
+      <div class="carousel-slide"><img src="g3.jpg" alt="Marco Polo Küche"></div>
+      <div class="carousel-slide"><img src="g4.jpg" alt="Marco Polo Schlafbereich"></div>
+      <div class="carousel-slide"><img src="g5.jpg" alt="Marco Polo Detail"></div>
+      <div class="carousel-slide"><img src="g6.jpg" alt="Marco Polo auf Reisen"></div>
+    </div>
+    <button class="carousel-btn prev" id="prevBtn" aria-label="Vorheriges Bild">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="carousel-btn next" id="nextBtn" aria-label="Nächstes Bild">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="carousel-counter" id="carouselCounter">1 / 8</div>
+  </div>
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
 <!-- SPECS TABLE -->
 <section class="specs-section">
   <div class="specs-inner">
@@ -1162,7 +1296,57 @@
     });
   });
 
-  const sections = document.querySelectorAll('section[id]');
+  // Carousel
+  const track = document.getElementById('carouselTrack');
+  const slides = track ? track.querySelectorAll('.carousel-slide') : [];
+  const dotsContainer = document.getElementById('carouselDots');
+  const counter = document.getElementById('carouselCounter');
+  let current = 0;
+  let autoTimer;
+
+  if (slides.length > 0) {
+    // Dots erstellen
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Bild ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+      counter.textContent = `${current + 1} / ${slides.length}`;
+    }
+
+    function startAuto() {
+      autoTimer = setInterval(() => goTo(current + 1), 4500);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+    // Touch/Swipe
+    let touchStartX = 0;
+    const carousel = document.getElementById('carousel');
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
+    });
+
+    startAuto();
+  }
+
+
   const navLinks = document.querySelectorAll('.nav-links a');
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
