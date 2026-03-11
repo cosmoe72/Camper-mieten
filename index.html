@@ -24,7 +24,7 @@
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Mercedes V-Klasse Marco Polo Camper",
-  "description": "Mercedes V-Klasse Marco Polo mit Allradantrieb, 4 Schlafplätzen und vollausgestatteter Küche für Deine Traumreise mieten.",
+  "description": "Mercedes V-Klasse Marco Polo mit Allradantrieb, 4 Schlafplätzen und ausgestatteter Küche für Deine Traumreise mieten.",
   "brand": { "@type": "Brand", "name": "Mercedes-Benz" },
   "offers": [
     {
@@ -105,7 +105,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -237,6 +236,7 @@
     width: 100%; height: 100%;
     object-fit: cover;
     display: block;
+    mix-blend-mode: multiply;
   }
 
   .hero h1 {
@@ -691,31 +691,6 @@
     object-fit: cover;
   }
 
-  .about-stat {
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    background: var(--gold);
-    color: white;
-    padding: 14px 20px;
-    border-radius: 14px;
-    text-align: center;
-    box-shadow: 0 8px 24px rgba(140,110,69,0.3);
-  }
-
-  .about-stat strong {
-    display: block;
-    font-size: 24px;
-    font-family: 'DM Serif Display', serif;
-    line-height: 1;
-  }
-
-  .about-stat span {
-    font-size: 11px;
-    opacity: 0.85;
-    letter-spacing: 0.05em;
-  }
-
   .about-content span.section-label { text-align: left; }
 
   .about-content h2 {
@@ -758,7 +733,6 @@
   }
 
   .faq-header .section-label { color: var(--gold-light); }
-
   .faq-header .section-title { color: white; }
 
   .faq-item {
@@ -918,7 +892,6 @@
     .specs-grid { grid-template-columns: 1fr; }
     .about-section { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .about-visual { display: flex; justify-content: center; }
-    .about-stat { right: calc(50% - 140px); }
   }
 
   @media (max-width: 600px) {
@@ -978,7 +951,6 @@
   </div>
 
   <div class="camper-grid">
-    <!-- Yescapa -->
     <article class="camper-card" data-delay="0" itemscope itemtype="https://schema.org/Product">
       <a href="https://www.yescapa.de/campers/109345" target="_blank" rel="noopener">
         <div class="camper-img-wrap">
@@ -996,7 +968,6 @@
       </div>
     </article>
 
-    <!-- PaulCamper -->
     <article class="camper-card" data-delay="150" itemscope itemtype="https://schema.org/Product">
       <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank" rel="noopener">
         <div class="camper-img-wrap">
@@ -1157,7 +1128,7 @@
   <div class="footer-logo">Marco Polo Camper</div>
   <p class="footer-tagline">Mercedes V-Klasse · Allrad · 4 Schlafplätze · Vollküche</p>
   <div class="footer-links">
-    <a href="#camper">Fahrzeuge</a>
+    <a href="#camper">Fahrzeug</a>
     <a href="#ausstattung">Ausstattung</a>
     <a href="#ueber-mich">Über René</a>
     <a href="#faq">FAQ</a>
@@ -1169,7 +1140,6 @@
 </footer>
 
 <script>
-  // Intersection Observer für alle animierten Elemente
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1182,7 +1152,6 @@
   document.querySelectorAll('.camper-card, .feature-card, .spec-item, #quoteText')
     .forEach(el => observer.observe(el));
 
-  // FAQ Accordion
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -1193,7 +1162,6 @@
     });
   });
 
-  // Smooth nav highlight on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const navObserver = new IntersectionObserver((entries) => {
