@@ -3,369 +3,1171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camper mieten - Freiheit genießen</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<!-- SEO Meta Tags -->
+<title>Mercedes V-Klasse Marco Polo mieten – Camper von René | Traumreise starten</title>
+<meta name="description" content="Mercedes V-Klasse Marco Polo Camper mieten bei René. Allradantrieb, 4 Schlafplätze, vollausgestattete Küche. Jetzt über Yescapa oder PaulCamper buchen – Freiheit auf Rädern!">
+<meta name="keywords" content="Camper mieten, Mercedes Marco Polo mieten, V-Klasse Camper, Wohnmobil mieten, Campervan mieten, Yescapa, PaulCamper, Allrad Camper">
+<meta name="author" content="René Götzenbrugger">
+<meta name="robots" content="index, follow">
 
-<style>
-body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#fff;
-  color:#333;
-}
+<!-- Open Graph -->
+<meta property="og:title" content="Mercedes Marco Polo Camper mieten – Freiheit auf Rädern">
+<meta property="og:description" content="Allradantrieb, 4 Schlafplätze, vollausgestattete Küche. Jetzt deinen Traumurlaub im Mercedes V-Klasse Marco Polo starten.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="camper1.jpg">
+<meta property="og:locale" content="de_DE">
 
-/* HEADER */
-header{
-  background: linear-gradient(180deg,#C8AD7E 0%, #d9c399 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding:40px 20px 36px;
-  text-align: center;
-}
-
-.logo-circle {
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  overflow:hidden;
-  margin-bottom:10px;
-  box-shadow: 0 0 100px 30px rgba(255, 223, 170, 0.7);
-}
-
-.logo-circle img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-h1{
-  font-weight:700;
-  font-size:48px;
-  margin:5px 0 2px 0;
-}
-
-.sub{
-  font-weight:300;
-  font-size:20px;
-  margin-top:0;
-}
-
-/* CAMPER BEREICH */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-.camper-container{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:1.5rem; /* Desktop */
-  margin-top:20px;
-}
-
-.camper{
-  max-width:720px;
-  flex:1 1 520px;
-  text-align:center;
-  opacity:0;
-  transform: translateY(50px);
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-}
-
-.camper.visible{
-  opacity:1;
-  transform: translateY(0);
-}
-
-.camper .img-container{
-  width:100%;
-  border-radius:12px;
-  overflow:hidden;
-  margin-bottom:20px; /* X */
-}
-
-.camper .img-container img{
-  width:100%;
-  height:auto;
-  display:block;
-  transition: transform 0.6s ease;
-}
-
-.camper:hover .img-container img{
-  transform:scale(1.08);
-}
-
-.button{
-  display:inline-block;
-  margin-top:20px;
-  margin-bottom:20px; /* X */
-  padding:14px 28px;
-  border-radius:6px;
-  border:2px solid #C8AD7E;
-  background:white;
-  color:#C8AD7E;
-  font-weight:300;
-  text-decoration:none;
-  transition:all 0.3s ease;
-}
-
-.button:hover{
-  background:#C8AD7E;
-  color:white;
-}
-
-/* ZITAT */
-.quote-section{
-  background:#f7f3ea;
-  padding:50px 20px;
-  text-align:center;
-  margin-top:40px;
-}
-
-.quote-text{
-  font-family:"Playfair Display",serif;
-  font-style:italic;
-  font-size:42px;
-  line-height:1.1;
-  max-width:800px;
-  margin:auto;
-}
-
-.quote-text::before{
-  content:"» ";
-  font-size:1.3em;
-}
-
-.quote-text::after{
-  content:" «";
-  font-size:1.3em;
-}
-
-/* FEATURES */
-.features{
-  display:flex;
-  justify-content:center;
-  gap:80px;
-  margin:50px 0 60px 0;
-  flex-wrap:wrap;
-  text-align:center;
-}
-
-.feature{
-  opacity:0;
-  transform: translateY(50px);
-  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-}
-
-.feature.visible{
-  opacity:1;
-  transform: translateY(0);
-}
-
-.feature img{
-  width:60px;
-  height:60px;
-  margin-bottom:10px;
-}
-
-.feature p{
-  font-weight:300;
-  font-size:18px;
-  margin:0;
-  color:#C8AD7E; 
-  line-height:1.6;
-}
-
-/* ÜBER MICH */
-.about{
-  text-align:center;
-  padding:80px 20px;
-}
-
-.about-circle{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  overflow:hidden;
-  margin:auto;
-  margin-bottom:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.2);
-}
-
-.about-circle img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.about p{
-  max-width:600px;
-  margin:auto;
-  font-weight:300;
-  font-size:18px;
-  line-height:1.6;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px 20px;
-  font-size:14px;
-  color:#C8AD7E;
-}
-
-footer a{
-  color:#C8AD7E;
-  text-decoration:none;
-  font-weight:600;
-}
-
-footer a:hover{
-  text-decoration:underline;
-}
-
-/* TABLET */
-@media(max-width:900px){
-  h1{ font-size:38px; }
-  .quote-text{ font-size:30px; }
-  .camper-container{
-    display:block;
-  }
-  .camper{
-    margin-bottom:15px;
-  }
-  .camper .img-container{ margin-bottom:8px; }
-  .button{ margin-bottom:8px; }
-  .about-circle{ margin-bottom:12px; }
-  .features{ margin-top:30px; margin-bottom:30px; }
-}
-
-/* MOBILE HOCHFORMAT */
-@media(max-width:600px){
-  /* Container kompakt */
-  .camper-container{
-    display:block;
-    padding:0;
-  }
-
-  /* Bild → Button = X */
-  .camper .img-container{
-    margin-bottom:20px;
-  }
-
-  /* Button → nächstes Element = X */
-  .camper .button{
-    margin-bottom:20px;
-  }
-
-  /* Button 1 → Bild 2 = 3×X = 60px */
-  .camper-container .camper:nth-child(1) .button{
-    margin-bottom:60px !important;
-  }
-
-  /* Button 2 → Zitatbox = 60px */
-  .camper-container .camper:nth-child(2) .button{
-    margin-bottom:60px !important;
-  }
-
-  /* Quote-Section margin-top auf 0, damit Abstand nicht doppelt */
-  .quote-section{
-    margin-top:0 !important;
-  }
-
-  /* Optional kompakte Abstände für andere Elemente */
-  .camper{
-    margin-bottom:0;
-  }
-
-  .about-circle{
-    margin-bottom:5px;
-  }
-
-  .features{
-    margin-top:20px;
-    margin-bottom:20px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo-circle"><img src="logo.png" alt="Logo Camper"></div>
-  <h1>Camper mieten - Freiheit genießen</h1>
-  <p class="sub">Mercedes V-Klasse Marco Polo für Deine Traumreise mieten!</p>
-</header>
-
-<div class="container">
-  <div class="camper-container">
-    <div class="camper" data-delay="0">
-      <a href="https://www.yescapa.de/campers/109345" target="_blank">
-        <div class="img-container"><img src="camper2.jpg" alt="Camper Yescapa"></div>
-      </a>
-      <a class="button" href="https://www.yescapa.de/campers/109345" target="_blank">Camper über Yescapa mieten</a>
-    </div>
-    <div class="camper" data-delay="200">
-      <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">
-        <div class="img-container"><img src="camper1.jpg" alt="Camper PaulCamper"></div>
-      </a>
-      <a class="button" href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank">Camper über PaulCamper mieten</a>
-    </div>
-  </div>
-</div>
-
-<section class="quote-section">
-  <p class="quote-text">Die einzige Reise, die man bereut,<br>ist die, die man nicht macht</p>
-</section>
-
-<section class="features">
-  <div class="feature" data-delay="0">
-    <img src="Motor.png" alt="Allradantrieb">
-    <p>Performanter Allradantrieb <br>für zügiges und sicheres <br>Fahren auf <br>jeglichen Straßen</p>
-  </div>
-  <div class="feature" data-delay="150">
-    <img src="Menschen.png" alt="Vier Schlafplätze">
-    <p>Vier saubere und <br>bequeme Schlafplätze. <br>Zwei im Dachzelt, <br>zwei im Innenraum</p>
-  </div>
-  <div class="feature" data-delay="300">
-    <img src="Kueche.png" alt="Integrierte Küche">
-    <p>Integrierte Küche mit <br>zwei Gasbrennern, <br>Waschbecken und Kühlbox, <br>Sitzplätze für 4</p>
-  </div>
-</section>
-
-<section class="about">
-  <div class="about-circle"><img src="vermieter.png" alt="Vermieter"></div>
-  <h2>Über den Vermieter</h2>
-  <p>Reisen bedeutet Freiheit.<br>Hi. Mein Name ist René. Mit meinem Camper möchte ich genau dieses Gefühl an Euch weitergeben.<br>Einfach losfahren, neue Orte entdecken und Erinnerungen fürs Leben schaffen.</p>
-</section>
-
-<script>
-const campers = document.querySelectorAll('.camper');
-const features = document.querySelectorAll('.feature');
-
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
-      setTimeout(()=>{ entry.target.classList.add('visible'); }, delay);
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Mercedes V-Klasse Marco Polo Camper",
+  "description": "Mercedes V-Klasse Marco Polo mit Allradantrieb, 4 Schlafplätzen und vollausgestatteter Küche für Deine Traumreise mieten.",
+  "brand": { "@type": "Brand", "name": "Mercedes-Benz" },
+  "offers": [
+    {
+      "@type": "Offer",
+      "url": "https://www.yescapa.de/campers/109345",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": { "@type": "Person", "name": "René Götzenbrugger" }
+    },
+    {
+      "@type": "Offer",
+      "url": "https://www.paulcamper.de/rv/150995",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "seller": { "@type": "Person", "name": "René Götzenbrugger" }
     }
-  });
-},{threshold:0.1});
-
-campers.forEach(c=>observer.observe(c));
-features.forEach(f=>observer.observe(f));
+  ]
+}
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #B8986A;
+    --gold-light: #D4B896;
+    --gold-dark: #8C6E45;
+    --cream: #FAF8F4;
+    --warm-white: #FFFEF9;
+    --charcoal: #1A1A1A;
+    --mid: #5A5247;
+    --soft: #9A8F84;
+    --radius: 18px;
+    --radius-sm: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 254, 249, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(184,152,106,0.12);
+    transition: background 0.3s;
+  }
+
+  .nav-brand {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold-dark) !important;
+    transform: scale(1.03);
+    color: white !important;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 64px;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(165deg, var(--cream) 0%, #EDE5D6 55%, #D9C9A8 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 20%, rgba(184,152,106,0.13) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 80%, rgba(184,152,106,0.09) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 60px 24px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(184,152,106,0.15);
+    border: 1px solid rgba(184,152,106,0.3);
+    color: var(--gold-dark);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.1s ease forwards;
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 28px;
+    box-shadow: 0 0 0 1px rgba(184,152,106,0.2), 0 30px 60px rgba(140,110,69,0.25);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s ease forwards;
+  }
+
+  .hero-logo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.35s ease forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s ease forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.65s ease forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--charcoal);
+    color: white;
+    padding: 15px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(26,26,26,0.2);
+  }
+
+  .btn-primary:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(26,26,26,0.25);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--gold-dark);
+    padding: 15px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--soft);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 1s 1.2s ease forwards;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 1.8s ease-in-out infinite;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  /* ── CAMPER SECTION ── */
+  .camper-section {
+    padding: 120px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .camper-section-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .camper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 24px;
+  }
+
+  .camper-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(184,152,106,0.15);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .camper-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  }
+
+  .camper-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 64px rgba(140,110,69,0.15);
+  }
+
+  .camper-img-wrap {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .camper-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .camper-card:hover .camper-img-wrap img {
+    transform: scale(1.05);
+  }
+
+  .platform-badge {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: rgba(255,254,249,0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(184,152,106,0.2);
+    padding: 5px 13px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold-dark);
+  }
+
+  .camper-body {
+    padding: 28px 32px 32px;
+  }
+
+  .camper-body h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+  }
+
+  .camper-body p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .camper-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--charcoal);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .camper-btn:hover {
+    background: var(--gold-dark);
+    transform: translateX(3px);
+  }
+
+  .camper-btn svg { transition: transform 0.2s; }
+  .camper-btn:hover svg { transform: translateX(3px); }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    background: var(--charcoal);
+    padding: 100px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(184,152,106,0.12) 0%, transparent 70%);
+  }
+
+  .quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 120px;
+    line-height: 0.5;
+    color: var(--gold);
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(26px, 4vw, 44px);
+    line-height: 1.25;
+    color: white;
+    max-width: 760px;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .quote-text.visible { opacity: 1; transform: translateY(0); }
+
+  .quote-author {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── FEATURES ── */
+  .features-section {
+    padding: 120px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .feature-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    border: 1px solid rgba(184,152,106,0.15);
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+  }
+
+  .feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .feature-card:hover {
+    box-shadow: 0 20px 48px rgba(140,110,69,0.12);
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(184,152,106,0.2), rgba(184,152,106,0.05));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .feature-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .feature-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--charcoal);
+  }
+
+  .feature-card p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* ── SPECS ── */
+  .specs-section {
+    background: var(--cream);
+    padding: 100px 24px;
+  }
+
+  .specs-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .specs-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(184,152,106,0.2);
+  }
+
+  .spec-item {
+    background: white;
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(184,152,106,0.1);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .spec-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .spec-label {
+    font-size: 14px;
+    color: var(--soft);
+    font-weight: 400;
+  }
+
+  .spec-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  /* ── ABOUT ── */
+  .about-section {
+    padding: 120px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-ring {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 6px var(--cream), 0 0 0 7px rgba(184,152,106,0.3), 0 24px 56px rgba(140,110,69,0.2);
+    margin: 0 auto;
+  }
+
+  .about-img-ring img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .about-stat {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background: var(--gold);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(140,110,69,0.3);
+  }
+
+  .about-stat strong {
+    display: block;
+    font-size: 24px;
+    font-family: 'DM Serif Display', serif;
+    line-height: 1;
+  }
+
+  .about-stat span {
+    font-size: 11px;
+    opacity: 0.85;
+    letter-spacing: 0.05em;
+  }
+
+  .about-content span.section-label { text-align: left; }
+
+  .about-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .about-content p strong {
+    color: var(--charcoal);
+    font-weight: 500;
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    background: var(--charcoal);
+    padding: 100px 24px;
+  }
+
+  .faq-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .faq-header .section-label { color: var(--gold-light); }
+
+  .faq-header .section-title { color: white; }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding: 22px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s;
+  }
+
+  .faq-question:hover { color: var(--gold-light); }
+
+  .faq-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,152,106,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 16px;
+    transition: transform 0.3s, background 0.2s;
+  }
+
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    padding-bottom: 20px;
+  }
+
+  .faq-item.open .faq-answer { max-height: 200px; }
+
+  /* ── CTA BANNER ── */
+  .cta-section {
+    padding: 100px 24px;
+    text-align: center;
+    background: linear-gradient(160deg, var(--cream) 0%, #EDE5D6 100%);
+  }
+
+  .cta-section .section-title { margin-bottom: 16px; }
+
+  .cta-section p {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--mid);
+    margin-bottom: 40px;
+    line-height: 1.65;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 48px 32px 32px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--soft);
+    margin-bottom: 32px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 24px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 0.5; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .camper-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; gap: 16px; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .about-section { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .about-visual { display: flex; justify-content: center; }
+    .about-stat { right: calc(50% - 140px); }
+  }
+
+  @media (max-width: 600px) {
+    .hero-actions { flex-direction: column; align-items: center; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .camper-body { padding: 20px; }
+    nav { padding: 0 16px; }
+    .feature-card { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">🚐 Marco Polo Camper</a>
+  <ul class="nav-links">
+    <li><a href="#camper">Fahrzeuge</a></li>
+    <li><a href="#ausstattung">Ausstattung</a></li>
+    <li><a href="#ueber-mich">Über René</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a class="nav-cta" href="#camper">Jetzt buchen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Mercedes V-Klasse · Marco Polo</div>
+    <div class="hero-logo">
+      <img src="logo.png" alt="Marco Polo Camper Logo">
+    </div>
+    <h1>Deine Reise.<br><em>Deine Freiheit.</em></h1>
+    <p class="hero-sub">Entdecke die Welt im komfortablen Mercedes V-Klasse Marco Polo – mit Allradantrieb, Dachzelt und vollausgestatteter Küche für unvergessliche Abenteuer.</p>
+    <div class="hero-actions">
+      <a href="#camper" class="btn-primary">
+        Camper jetzt buchen
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#ausstattung" class="btn-secondary">
+        Ausstattung entdecken
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- CAMPER SECTION -->
+<section class="camper-section" id="camper">
+  <div class="camper-section-header">
+    <span class="section-label">Buchungsplattformen</span>
+    <h2 class="section-title">Zwei einfache Wege<br>zu Deinem Abenteuer</h2>
+    <p class="section-sub" style="margin:0 auto;">Buche denselben liebevoll ausgestatteten Mercedes Marco Polo über deine bevorzugte Plattform – beide mit geprüften Bewertungen und sicherem Buchungsprozess.</p>
+  </div>
+
+  <div class="camper-grid">
+    <!-- Yescapa -->
+    <article class="camper-card" data-delay="0" itemscope itemtype="https://schema.org/Product">
+      <a href="https://www.yescapa.de/campers/109345" target="_blank" rel="noopener">
+        <div class="camper-img-wrap">
+          <img src="camper2.jpg" alt="Mercedes Marco Polo Camper – Yescapa buchbar" itemprop="image">
+          <span class="platform-badge">Yescapa</span>
+        </div>
+      </a>
+      <div class="camper-body">
+        <h3 itemprop="name">Mercedes Marco Polo auf Yescapa</h3>
+        <p itemprop="description">Buche sicher über Yescapa – inklusive Versicherungsschutz, bewährtem Buchungssystem und transparenter Preisgestaltung.</p>
+        <a class="camper-btn" href="https://www.yescapa.de/campers/109345" target="_blank" rel="noopener">
+          Auf Yescapa buchen
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- PaulCamper -->
+    <article class="camper-card" data-delay="150" itemscope itemtype="https://schema.org/Product">
+      <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank" rel="noopener">
+        <div class="camper-img-wrap">
+          <img src="camper1.jpg" alt="Mercedes Marco Polo Camper – PaulCamper buchbar" itemprop="image">
+          <span class="platform-badge">PaulCamper</span>
+        </div>
+      </a>
+      <div class="camper-body">
+        <h3 itemprop="name">Mercedes Marco Polo auf PaulCamper</h3>
+        <p itemprop="description">Direkt auf PaulCamper verfügbar – mit flexibler Kasko-Option, persönlichem Kundensupport und einfacher Online-Buchung.</p>
+        <a class="camper-btn" href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank" rel="noopener">
+          Auf PaulCamper buchen
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <span class="quote-mark">"</span>
+  <p class="quote-text" id="quoteText">Die einzige Reise, die man bereut, ist die, die man nicht macht.</p>
+  <p class="quote-author">— Freiheit auf Rädern</p>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="ausstattung">
+  <div class="features-header">
+    <span class="section-label">Ausstattung & Technik</span>
+    <h2 class="section-title">Alles dabei.<br>Nichts vergessen.</h2>
+    <p class="section-sub" style="margin:0 auto;">Der Mercedes Marco Polo kombiniert Alltagstauglichkeit mit echtem Reisekomfort – kompakt, kraftvoll und durchdacht bis ins Detail.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card" data-delay="0">
+      <div class="feature-icon"><img src="Motor.png" alt="Allradantrieb Icon"></div>
+      <h3>Performanter Allradantrieb</h3>
+      <p>Sicheres und zügiges Fahren auf allen Straßentypen – ob Bergpass, Schotterweg oder Autobahn. Der 4MATIC Antrieb gibt dir die nötige Kontrolle für jedes Abenteuer.</p>
+    </div>
+    <div class="feature-card" data-delay="150">
+      <div class="feature-icon"><img src="Menschen.png" alt="Schlafplätze Icon"></div>
+      <h3>4 komfortable Schlafplätze</h3>
+      <p>Zwei saubere Schlafplätze im elektrischen Aufstelldach und zwei im bequemen Innenraum. Der Camper ist ideal für Familien, Freunde oder Paare mit Kindern.</p>
+    </div>
+    <div class="feature-card" data-delay="300">
+      <div class="feature-icon"><img src="Kueche.png" alt="Küche Icon"></div>
+      <h3>Vollausgestattete Küche</h3>
+      <p>Zwei Gasbrenner, Waschbecken, Kühlbox und Sitzgelegenheiten für vier Personen. Frisch kochen – egal ob am Strand, in den Bergen oder auf dem Campingplatz.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS TABLE -->
+<section class="specs-section">
+  <div class="specs-inner">
+    <div class="specs-header">
+      <span class="section-label">Technische Daten</span>
+      <h2 class="section-title">Der Camper im Detail</h2>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-item"><span class="spec-label">Fahrzeug</span><span class="spec-value">Mercedes-Benz V-Klasse Marco Polo</span></div>
+      <div class="spec-item"><span class="spec-label">Antrieb</span><span class="spec-value">4MATIC Allradantrieb</span></div>
+      <div class="spec-item"><span class="spec-label">Schlafplätze</span><span class="spec-value">4 (2 Dachzelt + 2 innen)</span></div>
+      <div class="spec-item"><span class="spec-label">Sitzplätze</span><span class="spec-value">4 Personen</span></div>
+      <div class="spec-item"><span class="spec-label">Küche</span><span class="spec-value">2 Gasbrenner, Kühlbox, Waschbecken</span></div>
+      <div class="spec-item"><span class="spec-label">Dachzelt</span><span class="spec-value">Elektrisch aufstellbar</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="ueber-mich">
+  <div class="about-visual">
+    <div class="about-img-ring">
+      <img src="vermieter.png" alt="René Götzenbrugger – Camper Vermieter">
+    </div>
+    <div class="about-stat">
+      <strong>⭐ 5.0</strong>
+      <span>Bewertung</span>
+    </div>
+  </div>
+  <div class="about-content">
+    <span class="section-label">Über den Vermieter</span>
+    <h2>Hi, ich bin<br>René.</h2>
+    <p>Reisen bedeutet für mich <strong>Freiheit</strong>. Mit meinem Mercedes Marco Polo möchte ich genau dieses Gefühl an Euch weitergeben – einfach losfahren, neue Orte entdecken und Erinnerungen fürs Leben schaffen.</p>
+    <p>Der Camper ist liebevoll gepflegt, regelmäßig gewartet und für jede Reise bereit. Ich begleite Euch persönlich durch die Einweisung und stehe bei Fragen jederzeit zur Verfügung.</p>
+    <a href="#camper" class="btn-primary" style="margin-top:12px;display:inline-flex;">
+      Jetzt buchen
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="section-label">Häufige Fragen</span>
+      <h2 class="section-title">Alles, was Du<br>wissen möchtest</h2>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Wie und wo kann ich den Camper buchen?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Du kannst den Mercedes Marco Polo bequem online über Yescapa oder PaulCamper buchen. Beide Plattformen bieten sichere Zahlungsabwicklung, Versicherungsoptionen und einen einfachen Buchungsprozess.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Welche Versicherung ist inkludiert?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Beide Plattformen bieten Versicherungspakete an. Bei PaulCamper gibt es zusätzlich eine flexible Kasko-Option. Details zur Versicherung findest du direkt auf der jeweiligen Buchungsseite.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Wie viele Personen passen in den Camper?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Der Mercedes Marco Polo bietet 4 Schlafplätze (2 im elektrischen Aufstelldach, 2 im Innenraum) und Sitzplätze für 4 Personen. Ideal für Familien oder kleine Gruppen.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Gibt es eine Einweisung vor der Abfahrt?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Ja! René führt Euch persönlich in das Fahrzeug ein – von der Bedienung des Dachzelts über die Küche bis hin zu allen wichtigen Funktionen. So startet ihr sicher und entspannt in euer Abenteuer.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        Benötige ich einen speziellen Führerschein?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer"><p>Nein – der Mercedes V-Klasse Marco Polo fährt sich wie ein normales Auto und erfordert lediglich den Führerschein Klasse B (PKW-Führerschein). Kein Wohnmobil-Führerschein nötig.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="section-label">Bereit für dein Abenteuer?</span>
+  <h2 class="section-title">Deine nächste Reise<br>beginnt hier.</h2>
+  <p>Wähle deine Buchungsplattform und sichere dir noch heute deinen Wunschtermin.<br>Wir freuen uns auf dich!</p>
+  <div class="cta-buttons">
+    <a href="https://www.yescapa.de/campers/109345" target="_blank" rel="noopener" class="btn-primary">
+      Über Yescapa buchen
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="https://www.paulcamper.de/rv/150995?hireType=4&excessReductionId=161" target="_blank" rel="noopener" class="btn-secondary">
+      Über PaulCamper buchen
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 René Götzenbrugger · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  <div class="footer-logo">Marco Polo Camper</div>
+  <p class="footer-tagline">Mercedes V-Klasse · Allrad · 4 Schlafplätze · Vollküche</p>
+  <div class="footer-links">
+    <a href="#camper">Fahrzeuge</a>
+    <a href="#ausstattung">Ausstattung</a>
+    <a href="#ueber-mich">Über René</a>
+    <a href="#faq">FAQ</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-copy">© 2026 René Götzenbrugger · Alle Rechte vorbehalten</p>
 </footer>
+
+<script>
+  // Intersection Observer für alle animierten Elemente
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = parseInt(entry.target.getAttribute('data-delay')) || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.camper-card, .feature-card, .spec-item, #quoteText')
+    .forEach(el => observer.observe(el));
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Smooth nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id ? 'var(--gold)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+  sections.forEach(s => navObserver.observe(s));
+</script>
 
 </body>
 </html>
