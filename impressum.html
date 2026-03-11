@@ -1,69 +1,261 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – Marco Polo Camper</title>
+<meta name="robots" content="noindex, nofollow">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #ffffff;
-      color: #333;
-      margin: 0;
-      padding: 40px 20px;
-      text-align: center;
-    }
+<style>
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('fonts/DMSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('fonts/DMSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('fonts/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Serif Display';
+    src: url('fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Serif Display';
+    src: url('fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
 
-    h1 {
-      font-weight: 700;
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #C8AD7E;
-    }
+  :root {
+    --gold: #B8986A;
+    --gold-dark: #8C6E45;
+    --cream: #FAF8F4;
+    --warm-white: #FFFEF9;
+    --charcoal: #1A1A1A;
+    --mid: #5A5247;
+    --soft: #9A8F84;
+  }
 
-    p {
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 10px auto;
-    }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    a {
-      color: #C8AD7E;
-      text-decoration: none;
-      font-weight: 600;
-    }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 254, 249, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(184,152,106,0.12);
+  }
+
+  .nav-brand {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+
+  .nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--gold); }
+
+  main {
+    padding-top: 64px;
+    min-height: 100vh;
+  }
+
+  .page-header {
+    background: linear-gradient(165deg, var(--cream) 0%, #EDE5D6 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+  }
+
+  .page-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    color: var(--charcoal);
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  .content-block {
+    margin-bottom: 48px;
+  }
+
+  .content-block h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(184,152,106,0.2);
+  }
+
+  .content-block p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+
+  .content-block a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .content-block a:hover {
+    color: var(--gold-dark);
+    text-decoration: underline;
+  }
+
+  footer {
+    background: var(--charcoal);
+    padding: 32px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+</style>
 </head>
 <body>
 
-  <h1>Impressum</h1>
+<nav>
+  <a class="nav-brand" href="index.html">🚐 Marco Polo Camper</a>
+  <a class="nav-back" href="index.html">
+    ← Zurück zur Startseite
+  </a>
+</nav>
 
-  <p>Angaben gemäß §5 TMG</p>
+<main>
+  <div class="page-header">
+    <span class="page-label">Rechtliches</span>
+    <h1 class="page-title">Impressum</h1>
+  </div>
 
-  <p>
-    René Götzenbrugger<br>
-    Schlegelstraße 11<br>
-    89522 Heidenheim an der Brenz<br>
-    Deutschland
-  </p>
+  <div class="content">
 
-  <p>
-    Kontakt:<br>
-    <script>
-      const user = "r.goetzenbrugger";
-      const domain = "graustich.com";
-      document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
-    </script>
-  </p>
+    <div class="content-block">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>René Götzenbrugger<br>
+      Schlegelstraße 11<br>
+      89522 Heidenheim an der Brenz<br>
+      Deutschland</p>
+    </div>
+
+    <div class="content-block">
+      <h2>Kontakt</h2>
+      <p>E-Mail:
+        <script>
+          const user = "r.goetzenbrugger";
+          const domain = "graustich.com";
+          document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
+        </script>
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>Haftung für Inhalte</h2>
+      <p>Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG bin ich als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+    </div>
+
+    <div class="content-block">
+      <h2>Haftung für Links</h2>
+      <p>Diese Seite enthält Links zu externen Websites Dritter (Yescapa, PaulCamper), auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.</p>
+    </div>
+
+    <div class="content-block">
+      <h2>Urheberrecht</h2>
+      <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Autors.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-copy">© 2026 René Götzenbrugger · Alle Rechte vorbehalten</p>
+</footer>
 
 </body>
 </html>

@@ -1,68 +1,290 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutz</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #ffffff;
-      color: #333;
-      margin: 0;
-      padding: 40px 20px;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz – Marco Polo Camper</title>
+<meta name="robots" content="noindex, nofollow">
 
-    h1 {
-      font-weight: 700;
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #C8AD7E;
-    }
+<style>
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('fonts/DMSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('fonts/DMSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('fonts/DMSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Serif Display';
+    src: url('fonts/DMSerifDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Serif Display';
+    src: url('fonts/DMSerifDisplay-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
 
-    p {
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 15px auto;
-    }
+  :root {
+    --gold: #B8986A;
+    --gold-dark: #8C6E45;
+    --cream: #FAF8F4;
+    --warm-white: #FFFEF9;
+    --charcoal: #1A1A1A;
+    --mid: #5A5247;
+    --soft: #9A8F84;
+  }
 
-    a {
-      color: #C8AD7E;
-      text-decoration: none;
-      font-weight: 600;
-    }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 32px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 254, 249, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(184,152,106,0.12);
+  }
+
+  .nav-brand {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+
+  .nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--gold); }
+
+  main {
+    padding-top: 64px;
+    min-height: 100vh;
+  }
+
+  .page-header {
+    background: linear-gradient(165deg, var(--cream) 0%, #EDE5D6 100%);
+    padding: 80px 24px 60px;
+    text-align: center;
+  }
+
+  .page-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    color: var(--charcoal);
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  .content-block {
+    margin-bottom: 48px;
+  }
+
+  .content-block h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(184,152,106,0.2);
+  }
+
+  .content-block p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 8px;
+  }
+
+  .content-block a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .content-block a:hover {
+    color: var(--gold-dark);
+    text-decoration: underline;
+  }
+
+  .highlight-box {
+    background: var(--cream);
+    border: 1px solid rgba(184,152,106,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+
+  .highlight-box p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--mid);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  footer {
+    background: var(--charcoal);
+    padding: 32px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+</style>
 </head>
 <body>
 
-  <h1>Datenschutz</h1>
+<nav>
+  <a class="nav-brand" href="index.html">🚐 Marco Polo Camper</a>
+  <a class="nav-back" href="index.html">← Zurück zur Startseite</a>
+</nav>
 
-  <p>
-    Der Schutz deiner persönlichen Daten ist uns wichtig. Auf dieser Website werden <strong>keine persönlichen Daten von dir gespeichert</strong>.  
-  </p>
+<main>
+  <div class="page-header">
+    <span class="page-label">Rechtliches</span>
+    <h1 class="page-title">Datenschutzerklärung</h1>
+  </div>
 
-  <p>
-    Wenn du auf die Buchungslinks zu <a href="https://www.paulcamper.de" target="_blank">PaulCamper</a> oder <a href="https://www.yescapa.de" target="_blank">Yescapa</a> klickst, werden deine Daten direkt an diese Plattformen übermittelt. Bitte beachte deren <a href="https://www.paulcamper.de/datenschutz" target="_blank">Datenschutzerklärungen</a>.
-  </p>
+  <div class="content">
 
-  <p>
-    Cookies oder Tracking-Tools werden auf dieser Seite nur minimal eingesetzt, soweit sie für die Funktion der Seite nötig sind.
-  </p>
+    <div class="highlight-box">
+      <p>Diese Website verwendet <strong>keine Cookies</strong>, kein Tracking und keine Analyse-Tools. Es werden keine persönlichen Daten gespeichert oder verarbeitet.</p>
+    </div>
 
-  <p>
-    Kontakt: <script>
-      const user = "r.goetzenbrugger";
-      const domain = "graustich.com";
-      document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
-    </script>
-  </p>
+    <div class="content-block">
+      <h2>Verantwortlicher</h2>
+      <p>René Götzenbrugger<br>
+      Schlegelstraße 11<br>
+      89522 Heidenheim an der Brenz<br>
+      Deutschland</p>
+      <p>E-Mail:
+        <script>
+          const user = "r.goetzenbrugger";
+          const domain = "graustich.com";
+          document.write('<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>');
+        </script>
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>Hosting & Server-Logfiles</h2>
+      <p>Diese Website wird über einen Webserver bereitgestellt. Beim Abrufen der Seite werden durch den Hosting-Anbieter technische Zugriffsdaten (z. B. IP-Adresse, Zeitpunkt des Abrufs, aufgerufene Seite) in sogenannten Server-Logfiles gespeichert. Diese Daten sind technisch notwendig und werden nicht mit anderen Datenquellen zusammengeführt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website).</p>
+    </div>
+
+    <div class="content-block">
+      <h2>Schriftarten (Webfonts)</h2>
+      <p>Diese Website verwendet die Schriftarten <em>DM Sans</em> und <em>DM Serif Display</em>. Die Schriftdateien sind lokal auf dem Webserver gespeichert und werden nicht von externen Servern (z. B. Google Fonts) geladen. Es findet daher keine Übertragung von Daten an Dritte statt.</p>
+    </div>
+
+    <div class="content-block">
+      <h2>Externe Links (Buchungsplattformen)</h2>
+      <p>Diese Website enthält Links zu den externen Buchungsplattformen <a href="https://www.yescapa.de" target="_blank" rel="noopener">Yescapa</a> und <a href="https://www.paulcamper.de" target="_blank" rel="noopener">PaulCamper</a>. Wenn du auf diese Links klickst, verlässt du diese Website. Die Verarbeitung deiner Daten auf diesen Plattformen unterliegt deren eigenen Datenschutzbestimmungen:</p>
+      <p>
+        <a href="https://www.yescapa.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung Yescapa</a><br>
+        <a href="https://www.paulcamper.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung PaulCamper</a>
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>Cookies & Tracking</h2>
+      <p>Diese Website verwendet keinerlei Cookies, Tracking-Tools, Analyse-Software oder Social-Media-Plugins. Es werden keine Nutzerprofile erstellt.</p>
+    </div>
+
+    <div class="content-block">
+      <h2>Deine Rechte</h2>
+      <p>Du hast gemäß DSGVO jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner personenbezogenen Daten sowie das Recht auf Datenübertragbarkeit. Wende dich dazu per E-Mail an den oben genannten Verantwortlichen.</p>
+      <p>Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, z. B. beim Landesbeauftragten für den Datenschutz Baden-Württemberg.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Startseite</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-copy">© 2026 René Götzenbrugger · Alle Rechte vorbehalten</p>
+</footer>
 
 </body>
 </html>
